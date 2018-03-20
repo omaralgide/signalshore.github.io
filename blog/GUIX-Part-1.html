@@ -50,18 +50,18 @@
 <p>Some of the most important and most powerful features of the Guix package manager IMHO are ...</p>
 <ul>
 <li>
-<p><strong>The Gnu Store (<code>/gnu/store/</code>)</strong> is heart of the Guix package manager. This is the directory where all the packages and profile are stored in Guix. Unlike traditional package managers where the packages are stored in either <code>/bin</code> or <code>/usr/bin/</code> or anything, in Guix all the packages that are installed are installed under the <code>/gnu/store/</code> directory and the entire system is a web of symbolic links.</p>
+<p><strong>The gnu store (<code>/gnu/store/</code>)</strong> is heart of the Guix package manager. This is the directory where all the packages and profile are stored in Guix. Unlike traditional package managers where the packages are stored in either <code>/bin</code> or <code>/usr/bin/</code> or anything, in Guix all the packages that are installed are installed under the <code>/gnu/store/</code> directory and the entire system is a web of symbolic links.</p>
 </li>
 <li>
-<p><strong>Per-user profiles</strong> In guix packages are not installed globally. Traditionally in Linux when some package is installed it is available for use by everyone in the system with no exceptions. This makes sense because traditionally the packages are installed in the file-system itself, so there is no way of separating which user has which package. </p>
+<p><strong>Per-user profiles</strong> In guix packages are not installed globally. Traditionally in GNU/Linux when some package is installed it is available for use by everyone in the system with no exceptions. This makes sense because traditionally the packages are installed in the file-system itself, so there is no way of separating which user has which package. </p>
 <p>Things are quite different on the Guix Land (I apologize to the community for using <em>Guix Land</em>(I couldn't help myself)). In Guix, packages are managed using per-user profiles. This means that every user on the system has their own profile which makes sure that they have the packages that they want to use and nothing else. This also means that in guix installing packages does not need superuser privileges, since everyone can have authority over which packages they want to use. How Guix accomplishes this by using a series of symbolic links the actual binaries which reside in the Gnu Store. So if two users have different packages then it means that they just have different symbolic links pointing to the actual binaries in the gnu store. Same goes for different users having different versions of the same package.</p>
 <p>The per-user-profiles are stored under the directory <code>~/.guix-profile</code> </p>
 </li>
 <li>
-<p><strong>Purely Functional</strong> approach to package management. A pure function is a function that produces the same output <em>every-time</em> given the same set of arguments. Guix embraces this idea. Every package build in guix is treated as a function in which the inputs are the compiler, libraries, build scripts, etc and the output is the built package. This along with isolated build environment (I don't know much about it as I haven't had time to explore it yet) ensures that built packages are bit-identical even when they are built on different machines.</p>
+<p><strong>Purely Functional</strong> approach to package management. A <a href="https://en.wikipedia.org/wiki/Pure_function">pure function</a> is a function that produces the same output <em>every-time</em> given the same set of arguments. Guix embraces this idea. Every package build in guix is treated as a function in which the inputs are the compiler, libraries, build scripts, etc and the output is the built package. This along with isolated build environment (I don't know much about it as I haven't had time to explore it yet) ensures that built packages are bit-identical even when they are built on different machines.</p>
 </li>
 <li>
-<p><strong>Transactional Upgrades and Rollbacks</strong> Guix package upgrades are transnational in nature, this means that either the entire upgrade takes place or nothing gets upgraded so in case of a power-failure during upgrade, your system will not be left in a corrupt state. </p>
+<p><strong>Transactional Upgrades and Rollbacks</strong> Guix package upgrades are transactional in nature, this means that either the entire upgrade takes place or nothing gets upgraded so in case of a power-failure during upgrade, your system will not be left in a corrupt state. </p>
 <p>Also package upgrades, installs etc can be rolled back (yes! just like in git!!)</p>
 </li>
 <li>
@@ -74,8 +74,10 @@
 <li>Things will get really long.. really fast</li>
 </ol>
 <h2>What is GuixSD ?</h2>
-<p><a href="https://www.gnu.org/software/guix/manual/html_node/GNU-Distribution.html#GNU-Distribution">GuixSD</a> is the Linux Based Operating system built around the GUIX package manager. </p>
-<p>The core idea of GuixSD is that there should be a configuration file in which users will be able to specify the <em>final</em> state the installed system and the installer should be intelligent enough to figure out how to do that. </p>
+<p><s>GuixSD is the Linux Based Operating system built around the GUIX package manager.</s></p>
+<p><a href="https://www.gnu.org/software/guix/">GuixSD</a> or the Guix System Distribution is an advanced distribution of the GNU operating system developed by the GNU Project—which respects the freedom of computer users. </p>
+<p>That is what it says on their main website. I don't know much but the core idea of GuixSD is that there should be a configuration file in which users will be able to specify the <em>final</em> state the installed system and the installer should be intelligent enough to figure out how to do that. </p>
+<p>This is in addition to the philosophies of the GNU community and Free and Open Source Software. GuixSD runs the Libre Linux Kernel.</p>
 <h2>Installing Guix</h2>
 <p>You can follow
 the
@@ -102,7 +104,7 @@ are provided are quite good for normal everyday use. If however you
 need to use a more complex configuration you can refer
 to
 <a href="https://gitlab.com/83bytes/guix/blob/master/myConfig.scm">my configuration</a> (my
-config is a dual-booted uefi setup with arch Linux)</p>
+config is a dual-booted uefi setup with Arch Linux)</p>
 </li>
 </ol>
 <p><strong>NOTE:</strong> In Guix if you are dual-booting please make sure that the bootloader is installed properly since if it is not, you <strong>CAN NOT</strong> use the traditional fixes that we are used to (like bootrepair, or grub reinstall etc) because of how the GuixSD system is structured internally.</p>
@@ -165,12 +167,14 @@ relevance: <span class="m">4</span>
 <p>The file under <em>gnu/packages/</em> is the module name.</p>
 <h3>Updating and maintaining</h3>
 <p>Updating the GuixSD done through the command <code>guix pull</code>.</p>
-<p>Guix pull will result in Guix pulling all the new changes from the repo and building them locally. This generally takes a long time. </p>
+<p>guix pull will result in Guix pulling all the new changes from the repo and building them locally. This generally takes a long time. </p>
 <p>Once this is done then we can run <code>guix system reconfigure &lt;config file&gt;</code></p>
+<p><strong>Running <code>guix pull</code> as a normal user will NOT habe any effect on running <code>guix system reconfigure</code> as root</strong></p>
+<p><code>guix pull</code> can be run as a non root user. However <code>guix system reconfigure</code> must be run as root. Hence when you want to upgrade the system, run <code>guix pull</code> and <code>guix system reconfigure</code> as root. This will ensure that the whole system is upgraded at once.</p>
 <p>This command will again take the config file and reset Guix to the state described in the config file. </p>
 <p>After this we can again use <code>guix package -m &lt;profile file&gt;</code> to get the updated packages into the user profile.</p>
 <h3>Conclusion</h3>
-<p>That should be it for now. I know I am not posting regularly. I was very busy recently. However things are clearing up and I think I will write another essay about Lambda Calculus and Internals of Guix very soon!! </p>
+<p>That should be it for now. I know I am not posting regularly. I was very busy recently. However things are clearing up and I think I will write another essay about Lambda Calculus and Internals of Guix very soon (not <em>so</em> soon!!)!! </p>
 <p>:-)</p></div>
 	<hr>
 	<!-- <h2>Comments</h2> -->

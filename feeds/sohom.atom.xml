@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>SignalShore</title><link href="https://signalshore.github.io/" rel="alternate"></link><link href="https://signalshore.github.io/feeds/sohom.atom.xml" rel="self"></link><id>https://signalshore.github.io/</id><updated>2018-03-19T00:00:00+05:30</updated><entry><title>GNU Guix - Part 1</title><link href="https://signalshore.github.io/blog/GUIX-Part-1.html" rel="alternate"></link><published>2018-03-19T00:00:00+05:30</published><updated>2018-03-19T00:00:00+05:30</updated><author><name>Sohom</name></author><id>tag:signalshore.github.io,2018-03-19:blog/GUIX-Part-1.html</id><summary type="html">&lt;p&gt;I was considering the idea of moving to GNU GuixSD as my full time operating system for a long time. I tried GuixSD for some time but I gave up because I was frustrated with the config system. (I was un-doubtedly stupid back then)&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>SignalShore - Sohom</title><link href="https://signalshore.github.io/" rel="alternate"></link><link href="https://signalshore.github.io/feeds/sohom.atom.xml" rel="self"></link><id>https://signalshore.github.io/</id><updated>2018-03-19T00:00:00+05:30</updated><entry><title>GNU Guix - Part 1</title><link href="https://signalshore.github.io/blog/GUIX-Part-1.html" rel="alternate"></link><published>2018-03-19T00:00:00+05:30</published><updated>2018-03-19T00:00:00+05:30</updated><author><name>Sohom</name></author><id>tag:signalshore.github.io,2018-03-19:/blog/GUIX-Part-1.html</id><summary type="html">&lt;p&gt;I was considering the idea of moving to GNU GuixSD as my full time operating system for a long time. I tried GuixSD for some time but I gave up because I was frustrated with the config system. (I was un-doubtedly stupid back then)&lt;/p&gt;
+&lt;h2&gt;That was then, This is now …&lt;/h2&gt;</summary><content type="html">&lt;p&gt;I was considering the idea of moving to GNU GuixSD as my full time operating system for a long time. I tried GuixSD for some time but I gave up because I was frustrated with the config system. (I was un-doubtedly stupid back then)&lt;/p&gt;
 &lt;h2&gt;That was then, This is now&lt;/h2&gt;
 &lt;p&gt;I have finally transitioned to using Guix full time. In fact this essay is from my GUIX system itself. In this essay I will outline &lt;strong&gt;couple&lt;/strong&gt; of things that I found to be a bit difficult for an absolute beginner and a &lt;strong&gt;lot&lt;/strong&gt; of things that I find totally awesome and exciting about GNU Guix. &lt;/p&gt;
 &lt;h3&gt;What is GNU Guix ?&lt;/h3&gt;
@@ -7,18 +8,18 @@
 &lt;p&gt;Some of the most important and most powerful features of the Guix package manager IMHO are ...&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;
-&lt;p&gt;&lt;strong&gt;The Gnu Store (&lt;code&gt;/gnu/store/&lt;/code&gt;)&lt;/strong&gt; is heart of the Guix package manager. This is the directory where all the packages and profile are stored in Guix. Unlike traditional package managers where the packages are stored in either &lt;code&gt;/bin&lt;/code&gt; or &lt;code&gt;/usr/bin/&lt;/code&gt; or anything, in Guix all the packages that are installed are installed under the &lt;code&gt;/gnu/store/&lt;/code&gt; directory and the entire system is a web of symbolic links.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;The gnu store (&lt;code&gt;/gnu/store/&lt;/code&gt;)&lt;/strong&gt; is heart of the Guix package manager. This is the directory where all the packages and profile are stored in Guix. Unlike traditional package managers where the packages are stored in either &lt;code&gt;/bin&lt;/code&gt; or &lt;code&gt;/usr/bin/&lt;/code&gt; or anything, in Guix all the packages that are installed are installed under the &lt;code&gt;/gnu/store/&lt;/code&gt; directory and the entire system is a web of symbolic links.&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;&lt;strong&gt;Per-user profiles&lt;/strong&gt; In guix packages are not installed globally. Traditionally in Linux when some package is installed it is available for use by everyone in the system with no exceptions. This makes sense because traditionally the packages are installed in the file-system itself, so there is no way of separating which user has which package. &lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Per-user profiles&lt;/strong&gt; In guix packages are not installed globally. Traditionally in GNU/Linux when some package is installed it is available for use by everyone in the system with no exceptions. This makes sense because traditionally the packages are installed in the file-system itself, so there is no way of separating which user has which package. &lt;/p&gt;
 &lt;p&gt;Things are quite different on the Guix Land (I apologize to the community for using &lt;em&gt;Guix Land&lt;/em&gt;(I couldn't help myself)). In Guix, packages are managed using per-user profiles. This means that every user on the system has their own profile which makes sure that they have the packages that they want to use and nothing else. This also means that in guix installing packages does not need superuser privileges, since everyone can have authority over which packages they want to use. How Guix accomplishes this by using a series of symbolic links the actual binaries which reside in the Gnu Store. So if two users have different packages then it means that they just have different symbolic links pointing to the actual binaries in the gnu store. Same goes for different users having different versions of the same package.&lt;/p&gt;
 &lt;p&gt;The per-user-profiles are stored under the directory &lt;code&gt;~/.guix-profile&lt;/code&gt; &lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;&lt;strong&gt;Purely Functional&lt;/strong&gt; approach to package management. A pure function is a function that produces the same output &lt;em&gt;every-time&lt;/em&gt; given the same set of arguments. Guix embraces this idea. Every package build in guix is treated as a function in which the inputs are the compiler, libraries, build scripts, etc and the output is the built package. This along with isolated build environment (I don't know much about it as I haven't had time to explore it yet) ensures that built packages are bit-identical even when they are built on different machines.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Purely Functional&lt;/strong&gt; approach to package management. A &lt;a href="https://en.wikipedia.org/wiki/Pure_function"&gt;pure function&lt;/a&gt; is a function that produces the same output &lt;em&gt;every-time&lt;/em&gt; given the same set of arguments. Guix embraces this idea. Every package build in guix is treated as a function in which the inputs are the compiler, libraries, build scripts, etc and the output is the built package. This along with isolated build environment (I don't know much about it as I haven't had time to explore it yet) ensures that built packages are bit-identical even when they are built on different machines.&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;&lt;strong&gt;Transactional Upgrades and Rollbacks&lt;/strong&gt; Guix package upgrades are transnational in nature, this means that either the entire upgrade takes place or nothing gets upgraded so in case of a power-failure during upgrade, your system will not be left in a corrupt state. &lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Transactional Upgrades and Rollbacks&lt;/strong&gt; Guix package upgrades are transactional in nature, this means that either the entire upgrade takes place or nothing gets upgraded so in case of a power-failure during upgrade, your system will not be left in a corrupt state. &lt;/p&gt;
 &lt;p&gt;Also package upgrades, installs etc can be rolled back (yes! just like in git!!)&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
@@ -31,8 +32,10 @@
 &lt;li&gt;Things will get really long.. really fast&lt;/li&gt;
 &lt;/ol&gt;
 &lt;h2&gt;What is GuixSD ?&lt;/h2&gt;
-&lt;p&gt;&lt;a href="https://www.gnu.org/software/guix/manual/html_node/GNU-Distribution.html#GNU-Distribution"&gt;GuixSD&lt;/a&gt; is the Linux Based Operating system built around the GUIX package manager. &lt;/p&gt;
-&lt;p&gt;The core idea of GuixSD is that there should be a configuration file in which users will be able to specify the &lt;em&gt;final&lt;/em&gt; state the installed system and the installer should be intelligent enough to figure out how to do that. &lt;/p&gt;
+&lt;p&gt;&lt;s&gt;GuixSD is the Linux Based Operating system built around the GUIX package manager.&lt;/s&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://www.gnu.org/software/guix/"&gt;GuixSD&lt;/a&gt; or the Guix System Distribution is an advanced distribution of the GNU operating system developed by the GNU Project—which respects the freedom of computer users. &lt;/p&gt;
+&lt;p&gt;That is what it says on their main website. I don't know much but the core idea of GuixSD is that there should be a configuration file in which users will be able to specify the &lt;em&gt;final&lt;/em&gt; state the installed system and the installer should be intelligent enough to figure out how to do that. &lt;/p&gt;
+&lt;p&gt;This is in addition to the philosophies of the GNU community and Free and Open Source Software. GuixSD runs the Libre Linux Kernel.&lt;/p&gt;
 &lt;h2&gt;Installing Guix&lt;/h2&gt;
 &lt;p&gt;You can follow
 the
@@ -59,7 +62,7 @@ are provided are quite good for normal everyday use. If however you
 need to use a more complex configuration you can refer
 to
 &lt;a href="https://gitlab.com/83bytes/guix/blob/master/myConfig.scm"&gt;my configuration&lt;/a&gt; (my
-config is a dual-booted uefi setup with arch Linux)&lt;/p&gt;
+config is a dual-booted uefi setup with Arch Linux)&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
 &lt;p&gt;&lt;strong&gt;NOTE:&lt;/strong&gt; In Guix if you are dual-booting please make sure that the bootloader is installed properly since if it is not, you &lt;strong&gt;CAN NOT&lt;/strong&gt; use the traditional fixes that we are used to (like bootrepair, or grub reinstall etc) because of how the GuixSD system is structured internally.&lt;/p&gt;
@@ -122,13 +125,17 @@ relevance: &lt;span class="m"&gt;4&lt;/span&gt;
 &lt;p&gt;The file under &lt;em&gt;gnu/packages/&lt;/em&gt; is the module name.&lt;/p&gt;
 &lt;h3&gt;Updating and maintaining&lt;/h3&gt;
 &lt;p&gt;Updating the GuixSD done through the command &lt;code&gt;guix pull&lt;/code&gt;.&lt;/p&gt;
-&lt;p&gt;Guix pull will result in Guix pulling all the new changes from the repo and building them locally. This generally takes a long time. &lt;/p&gt;
+&lt;p&gt;guix pull will result in Guix pulling all the new changes from the repo and building them locally. This generally takes a long time. &lt;/p&gt;
 &lt;p&gt;Once this is done then we can run &lt;code&gt;guix system reconfigure &amp;lt;config file&amp;gt;&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Running &lt;code&gt;guix pull&lt;/code&gt; as a normal user will NOT habe any effect on running &lt;code&gt;guix system reconfigure&lt;/code&gt; as root&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;guix pull&lt;/code&gt; can be run as a non root user. However &lt;code&gt;guix system reconfigure&lt;/code&gt; must be run as root. Hence when you want to upgrade the system, run &lt;code&gt;guix pull&lt;/code&gt; and &lt;code&gt;guix system reconfigure&lt;/code&gt; as root. This will ensure that the whole system is upgraded at once.&lt;/p&gt;
 &lt;p&gt;This command will again take the config file and reset Guix to the state described in the config file. &lt;/p&gt;
 &lt;p&gt;After this we can again use &lt;code&gt;guix package -m &amp;lt;profile file&amp;gt;&lt;/code&gt; to get the updated packages into the user profile.&lt;/p&gt;
 &lt;h3&gt;Conclusion&lt;/h3&gt;
-&lt;p&gt;That should be it for now. I know I am not posting regularly. I was very busy recently. However things are clearing up and I think I will write another essay about Lambda Calculus and Internals of Guix very soon!! &lt;/p&gt;
-&lt;p&gt;:-)&lt;/p&gt;</summary><category term="CS"></category><category term="Guix"></category></entry><entry><title>Lambda Calculus - Part 1</title><link href="https://signalshore.github.io/blog/Lambda-Calculus-Part-1.html" rel="alternate"></link><published>2018-02-17T00:00:00+05:30</published><updated>2018-02-17T00:00:00+05:30</updated><author><name>Sohom</name></author><id>tag:signalshore.github.io,2018-02-17:blog/Lambda-Calculus-Part-1.html</id><summary type="html">&lt;p&gt;&lt;a href="https://en.wikipedia.org/wiki/Lambda_calculus"&gt;Lambda Calculus&lt;/a&gt; is a beautiful thing in Computer Science. &lt;/p&gt;
+&lt;p&gt;That should be it for now. I know I am not posting regularly. I was very busy recently. However things are clearing up and I think I will write another essay about Lambda Calculus and Internals of Guix very soon (not &lt;em&gt;so&lt;/em&gt; soon!!)!! &lt;/p&gt;
+&lt;p&gt;:-)&lt;/p&gt;</content><category term="CS"></category><category term="Guix"></category></entry><entry><title>Lambda Calculus - Part 1</title><link href="https://signalshore.github.io/blog/Lambda-Calculus-Part-1.html" rel="alternate"></link><published>2018-02-17T00:00:00+05:30</published><updated>2018-02-17T00:00:00+05:30</updated><author><name>Sohom</name></author><id>tag:signalshore.github.io,2018-02-17:/blog/Lambda-Calculus-Part-1.html</id><summary type="html">&lt;p&gt;&lt;a href="https://en.wikipedia.org/wiki/Lambda_calculus"&gt;Lambda Calculus&lt;/a&gt; is a beautiful thing in Computer Science. &lt;/p&gt;
+&lt;p&gt;With this post I will try to motivate and inspire the beauty of Lambda Calculus and impress upon the reader the implications of it.&lt;/p&gt;
+&lt;p&gt;This will just be a very very basic overview of Lambda Calculus. I can not write an …&lt;/p&gt;</summary><content type="html">&lt;p&gt;&lt;a href="https://en.wikipedia.org/wiki/Lambda_calculus"&gt;Lambda Calculus&lt;/a&gt; is a beautiful thing in Computer Science. &lt;/p&gt;
 &lt;p&gt;With this post I will try to motivate and inspire the beauty of Lambda Calculus and impress upon the reader the implications of it.&lt;/p&gt;
 &lt;p&gt;This will just be a very very basic overview of Lambda Calculus. I can not write an in-depth post because firstly I want to motivate the inspiration in the reader and secondly I have not completely understood some of the greater intricacies of Lambda Calculus.&lt;/p&gt;
 &lt;h2&gt;Introduction - Lambda Calculus&lt;/h2&gt;
@@ -310,7 +317,13 @@ In the previous equations replace &lt;span class="math"&gt;\(M\)&lt;/span&gt; an
         "}";
     (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
 }
-&lt;/script&gt;</summary><category term="CS"></category></entry><entry><title>FSMK Winter Camp, Hassan</title><link href="https://signalshore.github.io/blog/FSMK-Winter-Camp.html" rel="alternate"></link><published>2018-02-16T00:00:00+05:30</published><updated>2018-02-16T00:00:00+05:30</updated><author><name>Sohom</name></author><id>tag:signalshore.github.io,2018-02-16:blog/FSMK-Winter-Camp.html</id><summary type="html">&lt;p&gt;&lt;a href="https://fsmk.org/"&gt;Free Software Movement Karnataka (FSMK)&lt;/a&gt; conducted
+&lt;/script&gt;</content><category term="CS"></category></entry><entry><title>FSMK Winter Camp, Hassan</title><link href="https://signalshore.github.io/blog/FSMK-Winter-Camp.html" rel="alternate"></link><published>2018-02-16T00:00:00+05:30</published><updated>2018-02-16T00:00:00+05:30</updated><author><name>Sohom</name></author><id>tag:signalshore.github.io,2018-02-16:/blog/FSMK-Winter-Camp.html</id><summary type="html">&lt;p&gt;&lt;a href="https://fsmk.org/"&gt;Free Software Movement Karnataka (FSMK)&lt;/a&gt; conducted
+a winter camp
+at &lt;a href="http://rithassan.org/"&gt;Rajeev Institute of Technology&lt;/a&gt;, Hassan
+from 22nd January to 27th January.&lt;/p&gt;
+&lt;p&gt;It was a 6 day camp for the the participants with 2 days dedicated to
+volunteer training before the camp. In this camp we had three
+different areas of …&lt;/p&gt;</summary><content type="html">&lt;p&gt;&lt;a href="https://fsmk.org/"&gt;Free Software Movement Karnataka (FSMK)&lt;/a&gt; conducted
 a winter camp
 at &lt;a href="http://rithassan.org/"&gt;Rajeev Institute of Technology&lt;/a&gt;, Hassan
 from 22nd January to 27th January.&lt;/p&gt;
@@ -341,7 +354,7 @@ getting the equipment it was also my responsibility to check if all
 the NodeMCUs were working or not. This was the most fun part of the
 whole exercise. I ended up making a temporary production line sort of
 thing so as to optimize my testing and packing routine. :-P&lt;/p&gt;
-&lt;p&gt;&lt;img alt="Iot" src="/assets/images/2018-02-16/iot.jpg" /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="Iot" src="/assets/images/2018-02-16/iot.jpg"&gt;&lt;/p&gt;
 &lt;h6&gt;Iot team (some are missing, some are extra)&lt;/h6&gt;
 &lt;h2&gt;Being a speaker&lt;/h2&gt;
 &lt;p&gt;I was a speaker at this camp. This was the most scary part for me. I
@@ -389,7 +402,7 @@ phones and switched on their flashlights and pointed it towards the
 stage. It was a beautiful moment. It made me realize that as long as
 we are united, we can do anything we want to and nothing is
 impossible.&lt;/p&gt;
-&lt;p&gt;&lt;img alt="lights!!" src="/assets/images/2018-02-16/light.jpg" /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="lights!!" src="/assets/images/2018-02-16/light.jpg"&gt;&lt;/p&gt;
 &lt;h6&gt;People holding up lights!!&lt;/h6&gt;
 &lt;h2&gt;Meeting new people&lt;/h2&gt;
 &lt;p&gt;Meeting new people is always fun and I really enjoy meeting new
@@ -431,13 +444,17 @@ serving food whenever I could. I like doing this because this means
 that I can interact with everyone even if it is for a short time. I
 also threw in some weird pleasantries like "happy lunching" and so
 on! :-P&lt;/p&gt;
-&lt;p&gt;&lt;img alt="people serving breakfast" src="/assets/images/2018-02-16/food.jpg" /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="people serving breakfast" src="/assets/images/2018-02-16/food.jpg"&gt;&lt;/p&gt;
 &lt;h6&gt;People serving breakfast&lt;/h6&gt;
 &lt;h2&gt;Conclusion&lt;/h2&gt;
 &lt;p&gt;I think I have covered everything that I wanted to. If not I think I
 will add/edit something later on.&lt;/p&gt;
 &lt;p&gt;Group photo at the end of the camp.
-&lt;img alt="group pic" src="/assets/images/2018-02-16/group.jpg" /&gt;&lt;/p&gt;</summary><category term="Misc"></category><category term="Work"></category></entry><entry><title>Scheme - Part 4 - Higher Order Procedures (contd.)</title><link href="https://signalshore.github.io/blog/Scheme-Part-4.html" rel="alternate"></link><published>2018-02-06T00:00:00+05:30</published><updated>2018-02-06T00:00:00+05:30</updated><author><name>Sohom</name></author><id>tag:signalshore.github.io,2018-02-06:blog/Scheme-Part-4.html</id><summary type="html">&lt;h4&gt;Recap&lt;/h4&gt;
+&lt;img alt="group pic" src="/assets/images/2018-02-16/group.jpg"&gt;&lt;/p&gt;</content><category term="Misc"></category><category term="Work"></category></entry><entry><title>Scheme - Part 4 - Higher Order Procedures (contd.)</title><link href="https://signalshore.github.io/blog/Scheme-Part-4.html" rel="alternate"></link><published>2018-02-06T00:00:00+05:30</published><updated>2018-02-06T00:00:00+05:30</updated><author><name>Sohom</name></author><id>tag:signalshore.github.io,2018-02-06:/blog/Scheme-Part-4.html</id><summary type="html">&lt;h4&gt;Recap&lt;/h4&gt;
+&lt;p&gt;In the previous post we talked about the first part of what it means to be a Higher-Order Function.&lt;/p&gt;
+&lt;p&gt;In this post we will talk about the second part of that idea. And, we will explore Higher-Order functions and First Class Functions/Citizens. &lt;/p&gt;
+&lt;h3&gt;Procedures as returned values&lt;/h3&gt;
+&lt;p&gt;In Scheme …&lt;/p&gt;</summary><content type="html">&lt;h4&gt;Recap&lt;/h4&gt;
 &lt;p&gt;In the previous post we talked about the first part of what it means to be a Higher-Order Function.&lt;/p&gt;
 &lt;p&gt;In this post we will talk about the second part of that idea. And, we will explore Higher-Order functions and First Class Functions/Citizens. &lt;/p&gt;
 &lt;h3&gt;Procedures as returned values&lt;/h3&gt;
@@ -635,7 +652,13 @@ Such a definition looks like this ..&lt;/p&gt;
         "}";
     (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
 }
-&lt;/script&gt;</summary><category term="CS"></category><category term="Scheme"></category></entry><entry><title>Open Access</title><link href="https://signalshore.github.io/blog/Open-Access.html" rel="alternate"></link><published>2018-02-01T00:00:00+05:30</published><updated>2018-02-01T00:00:00+05:30</updated><author><name>Sohom</name></author><id>tag:signalshore.github.io,2018-02-01:blog/Open-Access.html</id><summary type="html">&lt;h2&gt;What is Open Access ?&lt;/h2&gt;
+&lt;/script&gt;</content><category term="CS"></category><category term="Scheme"></category></entry><entry><title>Open Access</title><link href="https://signalshore.github.io/blog/Open-Access.html" rel="alternate"></link><published>2018-02-01T00:00:00+05:30</published><updated>2018-02-01T00:00:00+05:30</updated><author><name>Sohom</name></author><id>tag:signalshore.github.io,2018-02-01:/blog/Open-Access.html</id><summary type="html">&lt;h2&gt;What is Open Access ?&lt;/h2&gt;
+&lt;p&gt;According to &lt;a href="https://en.wikipedia.org/wiki/Open_access"&gt;Wikipedia&lt;/a&gt;
+Open access refers to online research outputs that are free of all
+restrictions on access (e.g. access tolls) and free of many
+restrictions on use. &lt;/p&gt;
+&lt;p&gt;In simple terms Open Access means free information for all. It means
+that anyone irrespective of their …&lt;/p&gt;</summary><content type="html">&lt;h2&gt;What is Open Access ?&lt;/h2&gt;
 &lt;p&gt;According to &lt;a href="https://en.wikipedia.org/wiki/Open_access"&gt;Wikipedia&lt;/a&gt;
 Open access refers to online research outputs that are free of all
 restrictions on access (e.g. access tolls) and free of many
@@ -696,7 +719,11 @@ reading this blog will be enlightened.&lt;/p&gt;
 &lt;p&gt;Read the Open Access Manifesto in University gatherings.&lt;/p&gt;
 &lt;p&gt;Spread the love.&lt;/p&gt;
 &lt;p&gt;Knowledge should be free.&lt;/p&gt;
-&lt;p&gt;Let's keep it that way!!&lt;/p&gt;</summary><category term="Activism"></category></entry><entry><title>The Emacs Way</title><link href="https://signalshore.github.io/blog/Emacs.html" rel="alternate"></link><published>2018-01-17T00:00:00+05:30</published><updated>2018-01-17T00:00:00+05:30</updated><author><name>Sohom</name></author><id>tag:signalshore.github.io,2018-01-17:blog/Emacs.html</id><summary type="html">&lt;h3&gt;Starting out with Emacs&lt;/h3&gt;
+&lt;p&gt;Let's keep it that way!!&lt;/p&gt;</content><category term="Activism"></category></entry><entry><title>The Emacs Way</title><link href="https://signalshore.github.io/blog/Emacs.html" rel="alternate"></link><published>2018-01-17T00:00:00+05:30</published><updated>2018-01-17T00:00:00+05:30</updated><author><name>Sohom</name></author><id>tag:signalshore.github.io,2018-01-17:/blog/Emacs.html</id><summary type="html">&lt;h3&gt;Starting out with Emacs&lt;/h3&gt;
+&lt;p&gt;Like any other person who uses Linux I too started out by using vim as
+my default text editor. This was a time when I did not know the
+amazing world of vim plugins. It was a good journey for a while and
+over time my …&lt;/p&gt;</summary><content type="html">&lt;h3&gt;Starting out with Emacs&lt;/h3&gt;
 &lt;p&gt;Like any other person who uses Linux I too started out by using vim as
 my default text editor. This was a time when I did not know the
 amazing world of vim plugins. It was a good journey for a while and
@@ -873,7 +900,11 @@ I want to try out.&lt;/p&gt;
 &lt;h2&gt;Conclusion&lt;/h2&gt;
 &lt;p&gt;Emacs is great! 
 Vim is great too. (I also use vim when I am working on a server)&lt;/p&gt;
-&lt;p&gt;Emacs is a religion.&lt;/p&gt;</summary><category term="CS"></category><category term="Linux"></category></entry><entry><title>New Setup (I moved to Pelican)</title><link href="https://signalshore.github.io/blog/New-Setup.html" rel="alternate"></link><published>2018-01-04T00:00:00+05:30</published><updated>2018-01-04T00:00:00+05:30</updated><author><name>Sohom</name></author><id>tag:signalshore.github.io,2018-01-04:blog/New-Setup.html</id><summary type="html">&lt;p&gt;Can you spot something new ?&lt;/p&gt;
+&lt;p&gt;Emacs is a religion.&lt;/p&gt;</content><category term="CS"></category><category term="Linux"></category></entry><entry><title>New Setup (I moved to Pelican)</title><link href="https://signalshore.github.io/blog/New-Setup.html" rel="alternate"></link><published>2018-01-04T00:00:00+05:30</published><updated>2018-01-04T00:00:00+05:30</updated><author><name>Sohom</name></author><id>tag:signalshore.github.io,2018-01-04:/blog/New-Setup.html</id><summary type="html">&lt;p&gt;Can you spot something new ?&lt;/p&gt;
+&lt;p&gt;I decided last week that I wanted to use Pelican for building my blog
+instead of Jekyll. I have just switched in the last two days and this
+is the first post that I am writing from the Pelican built site.&lt;/p&gt;
+&lt;p&gt;There are a lot …&lt;/p&gt;</summary><content type="html">&lt;p&gt;Can you spot something new ?&lt;/p&gt;
 &lt;p&gt;I decided last week that I wanted to use Pelican for building my blog
 instead of Jekyll. I have just switched in the last two days and this
 is the first post that I am writing from the Pelican built site.&lt;/p&gt;
@@ -897,7 +928,12 @@ Apart form this there have been a number of smaller changes to this blog.&lt;/p&
 &lt;li&gt;The "publishing a post" workflow is a bit complicated than a Jekyll hosted site&lt;/li&gt;
 &lt;li&gt;I also removed some of the Signal and Sohom weirdness from the about page.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;So that's about it...&lt;/p&gt;</summary><category term="Meta"></category><category term="CS"></category></entry><entry><title>Scheme - Part 3 - Higher Order Procedures (intro)</title><link href="https://signalshore.github.io/blog/Scheme-Part-3.html" rel="alternate"></link><published>2017-12-20T00:00:00+05:30</published><updated>2017-12-20T00:00:00+05:30</updated><author><name>Sohom</name></author><id>tag:signalshore.github.io,2017-12-20:blog/Scheme-Part-3.html</id><summary type="html">&lt;h3&gt;Higher Order procedures&lt;/h3&gt;
+&lt;p&gt;So that's about it...&lt;/p&gt;</content><category term="Meta"></category><category term="CS"></category></entry><entry><title>Scheme - Part 3 - Higher Order Procedures (intro)</title><link href="https://signalshore.github.io/blog/Scheme-Part-3.html" rel="alternate"></link><published>2017-12-20T00:00:00+05:30</published><updated>2017-12-20T00:00:00+05:30</updated><author><name>Sohom</name></author><id>tag:signalshore.github.io,2017-12-20:/blog/Scheme-Part-3.html</id><summary type="html">&lt;h3&gt;Higher Order procedures&lt;/h3&gt;
+&lt;p&gt;&lt;s&gt;Lisp is a functional programming language&lt;/s&gt;&lt;/p&gt;
+&lt;p&gt;Lisp is a &lt;a href="https://en.wikipedia.org/wiki/Metaprogramming"&gt;Metaprogramming Language&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Actually, I really don't know what Lisp is myself and I'm just trying
+to figure it out; so the answer to the question "What programming
+paradigm does Lisp fall into ?" will have to wait for some …&lt;/p&gt;</summary><content type="html">&lt;h3&gt;Higher Order procedures&lt;/h3&gt;
 &lt;p&gt;&lt;s&gt;Lisp is a functional programming language&lt;/s&gt;&lt;/p&gt;
 &lt;p&gt;Lisp is a &lt;a href="https://en.wikipedia.org/wiki/Metaprogramming"&gt;Metaprogramming Language&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;Actually, I really don't know what Lisp is myself and I'm just trying
@@ -1145,7 +1181,12 @@ thing!!!&lt;/p&gt;
         "}";
     (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
 }
-&lt;/script&gt;</summary><category term="CS"></category><category term="Scheme"></category></entry><entry><title>Scheme - Part 2 - Expressions and Evaluations</title><link href="https://signalshore.github.io/blog/Scheme-Part-2.html" rel="alternate"></link><published>2017-11-30T00:00:00+05:30</published><updated>2017-11-30T00:00:00+05:30</updated><author><name>Sohom</name></author><id>tag:signalshore.github.io,2017-11-30:blog/Scheme-Part-2.html</id><summary type="html">&lt;h3&gt;S-expressions&lt;/h3&gt;
+&lt;/script&gt;</content><category term="CS"></category><category term="Scheme"></category></entry><entry><title>Scheme - Part 2 - Expressions and Evaluations</title><link href="https://signalshore.github.io/blog/Scheme-Part-2.html" rel="alternate"></link><published>2017-11-30T00:00:00+05:30</published><updated>2017-11-30T00:00:00+05:30</updated><author><name>Sohom</name></author><id>tag:signalshore.github.io,2017-11-30:/blog/Scheme-Part-2.html</id><summary type="html">&lt;h3&gt;S-expressions&lt;/h3&gt;
+&lt;p&gt;&lt;a href="https://en.wikipedia.org/wiki/S-expression"&gt;S-expressions&lt;/a&gt; or Sexprs or Symbolic Expressions are used to
+represented list like data. This was invented for and popularized by
+LISP. Lisp stands for LISt Processing. &lt;/p&gt;
+&lt;p&gt;A list looks like this &lt;code&gt;(x y ... z)&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;A list can be made up of other lists as well. Like so &lt;code&gt;(x (a …&lt;/code&gt;&lt;/p&gt;</summary><content type="html">&lt;h3&gt;S-expressions&lt;/h3&gt;
 &lt;p&gt;&lt;a href="https://en.wikipedia.org/wiki/S-expression"&gt;S-expressions&lt;/a&gt; or Sexprs or Symbolic Expressions are used to
 represented list like data. This was invented for and popularized by
 LISP. Lisp stands for LISt Processing. &lt;/p&gt;
@@ -1182,7 +1223,7 @@ as tree such that
 - Every other element of that list is a child of that node and are the
   operators for that operand.&lt;/p&gt;
 &lt;p&gt;The tree of the expression &lt;code&gt;(+ 2 3)&lt;/code&gt; will look like this&lt;/p&gt;
-&lt;p&gt;&lt;img alt="single tree" src="/assets/images/2017-11-30/single.jpg" /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="single tree" src="/assets/images/2017-11-30/single.jpg"&gt;&lt;/p&gt;
 &lt;p&gt;A LISP program is very easily parse-able by a computer as Trees do
 not need complicated rules for traversal and other operations. In-fact
 this sounds almost similar to the parse-tree of a
@@ -1227,7 +1268,7 @@ a look!&lt;/p&gt;
 expression &lt;code&gt;(+ 2 4 (+ 2 2))&lt;/code&gt; and then it evaluates the internal list
 first. Which is &lt;code&gt;(+ 2 2)&lt;/code&gt;. This expression evaluates to &lt;code&gt;4&lt;/code&gt;.&lt;/p&gt;
 &lt;p&gt;In the tree form this is how the above expression would look&lt;/p&gt;
-&lt;p&gt;&lt;img alt="double" src="/assets/images/2017-11-30/double.jpg" /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="double" src="/assets/images/2017-11-30/double.jpg"&gt;&lt;/p&gt;
 &lt;p&gt;Then the evaluator &lt;em&gt;substitutes&lt;/em&gt; that result to the actual expression
 before continuing on with the evaluation. So now the expression looks
 like this &lt;code&gt;(+ 2 4 4)&lt;/code&gt; and then we get the final answer.&lt;/p&gt;
@@ -1301,7 +1342,21 @@ itself. So in the end it all splatters exceptionally well.&lt;/p&gt;
 experience which is a very very limited one. I do not claim that what
 I have just said is the ultimate truth or the &lt;em&gt;only&lt;/em&gt; thing out
 there. My short life and my shorter experience with LISP is not nearly
-enough to cover the full depth and breadth of LISP&lt;/p&gt;</summary><category term="CS"></category><category term="Scheme"></category></entry><entry><title>Scheme - Part 1 - Wishful Thinking and Abstraction</title><link href="https://signalshore.github.io/blog/Scheme-Part-1.html" rel="alternate"></link><published>2017-11-20T00:00:00+05:30</published><updated>2017-11-20T00:00:00+05:30</updated><author><name>Sohom</name></author><id>tag:signalshore.github.io,2017-11-20:blog/Scheme-Part-1.html</id><summary type="html">&lt;h3&gt;Prologue&lt;/h3&gt;
+enough to cover the full depth and breadth of LISP&lt;/p&gt;</content><category term="CS"></category><category term="Scheme"></category></entry><entry><title>Scheme - Part 1 - Wishful Thinking and Abstraction</title><link href="https://signalshore.github.io/blog/Scheme-Part-1.html" rel="alternate"></link><published>2017-11-20T00:00:00+05:30</published><updated>2017-11-20T00:00:00+05:30</updated><author><name>Sohom</name></author><id>tag:signalshore.github.io,2017-11-20:/blog/Scheme-Part-1.html</id><summary type="html">&lt;h3&gt;Prologue&lt;/h3&gt;
+&lt;p&gt;I started
+learning
+&lt;a href="https://en.wikipedia.org/wiki/Lisp_(programming_language)"&gt;LISP&lt;/a&gt;
+(actually a dialect of LISP
+called
+&lt;a href="https://en.wikipedia.org/wiki/Scheme_(programming_language)"&gt;Scheme&lt;/a&gt;)
+sometime back. The inspiration for learning Scheme was that it is
+a completely new programming paradigm
+i.e. &lt;a href="https://en.wikipedia.org/wiki/Functional_programming"&gt;functional programming&lt;/a&gt; language
+and I wanted to learn a non-Object-Oriented programming
+language. Anyway, so I looked
+at
+&lt;a href="https://en.wikipedia.org/wiki/Haskell_(programming_language)"&gt;Haskell&lt;/a&gt;
+as its …&lt;/p&gt;</summary><content type="html">&lt;h3&gt;Prologue&lt;/h3&gt;
 &lt;p&gt;I started
 learning
 &lt;a href="https://en.wikipedia.org/wiki/Lisp_(programming_language)"&gt;LISP&lt;/a&gt;
@@ -1333,7 +1388,7 @@ approached computer science and programming in general. I want to
 share those.&lt;/p&gt;
 &lt;h3&gt;Lets start&lt;/h3&gt;
 &lt;p&gt;&lt;strong&gt;Let us write a program&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img alt="sum pic" src="/assets/images/2017-11-20/sum.png" /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="sum pic" src="/assets/images/2017-11-20/sum.png"&gt;&lt;/p&gt;
 &lt;p&gt;(these are cropped screen-shots of Emacs)&lt;/p&gt;
 &lt;p&gt;This program takes three numbers and adds them. This is also how the
 scheme syntax looks. Scheme syntax is
@@ -1347,10 +1402,10 @@ symbolic expressions.&lt;/p&gt;
 &lt;p&gt;In scheme we use the "define" keyword to define a procedure.&lt;/p&gt;
 &lt;p&gt;Its syntax is like this &lt;code&gt;(define (&amp;lt;name&amp;gt; &amp;lt;formal parameters) (&amp;lt;body&amp;gt;))&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Let us define a procedure&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img alt="sumProcedure" src="/assets/images/2017-11-20/procedureSum.png" /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="sumProcedure" src="/assets/images/2017-11-20/procedureSum.png"&gt;&lt;/p&gt;
 &lt;p&gt;This is how the procedure looks. The name of the procedure is "sum" and it takes in two numbers and produces their sum.&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Let us write something a bit complicated&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img alt="sumOfSquare" src="/assets/images/2017-11-20/sumOfSquares.png" /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="sumOfSquare" src="/assets/images/2017-11-20/sumOfSquares.png"&gt;&lt;/p&gt;
 &lt;p&gt;This procedure uses the previous "sum" procedure to compute the sum of
 the square of two numbers. I this process you should see another
 procedure that we have defined which is called "square". This is an
@@ -1398,7 +1453,11 @@ hang of it.&lt;/p&gt;
 &lt;h3&gt;Conclusion&lt;/h3&gt;
 &lt;p&gt;This is not the I have more things to share. Hopefully I will be able
 to write about them soon. :-P&lt;/p&gt;
-&lt;p&gt;&lt;a href="https://gitlab.com/83bytes/sicp"&gt;Here&lt;/a&gt; is the Gitlab Repo where I will keep uploading my SICP exercises.&lt;/p&gt;</summary><category term="CS"></category><category term="Scheme"></category></entry><entry><title>My First 100km Bicycle Ride</title><link href="https://signalshore.github.io/blog/My-First-100-km-Bicycle-Ride.html" rel="alternate"></link><published>2017-11-08T00:00:00+05:30</published><updated>2017-11-08T00:00:00+05:30</updated><author><name>Sohom</name></author><id>tag:signalshore.github.io,2017-11-08:blog/My-First-100-km-Bicycle-Ride.html</id><summary type="html">&lt;p&gt;Last Thursday (2 November, 2017) I completed my longest cycling ride
+&lt;p&gt;&lt;a href="https://gitlab.com/83bytes/sicp"&gt;Here&lt;/a&gt; is the Gitlab Repo where I will keep uploading my SICP exercises.&lt;/p&gt;</content><category term="CS"></category><category term="Scheme"></category></entry><entry><title>My First 100km Bicycle Ride</title><link href="https://signalshore.github.io/blog/My-First-100-km-Bicycle-Ride.html" rel="alternate"></link><published>2017-11-08T00:00:00+05:30</published><updated>2017-11-08T00:00:00+05:30</updated><author><name>Sohom</name></author><id>tag:signalshore.github.io,2017-11-08:/blog/My-First-100-km-Bicycle-Ride.html</id><summary type="html">&lt;p&gt;Last Thursday (2 November, 2017) I completed my longest cycling ride
+(yet!). It was tiring and awesome at the same time. It took 7 hours to
+complete that too with multiple stops in the middle of the ride.&lt;/p&gt;
+&lt;h3&gt;The Motivation&lt;/h3&gt;
+&lt;p&gt;I've been planning to do a 100k ride for a …&lt;/p&gt;</summary><content type="html">&lt;p&gt;Last Thursday (2 November, 2017) I completed my longest cycling ride
 (yet!). It was tiring and awesome at the same time. It took 7 hours to
 complete that too with multiple stops in the middle of the ride.&lt;/p&gt;
 &lt;h3&gt;The Motivation&lt;/h3&gt;
@@ -1482,7 +1541,7 @@ optimum carrying requirements
 - My helmet&lt;/p&gt;
 &lt;p&gt;Here is the full inventory laid out for a photo. Note that the tube is
 missing because I forgot to keep it
-there.  &lt;img alt="Stuff I carried" src="/assets/images/2017-11-08/contents.jpg" /&gt;&lt;/p&gt;
+there.  &lt;img alt="Stuff I carried" src="/assets/images/2017-11-08/contents.jpg"&gt;&lt;/p&gt;
 &lt;p&gt;I fit a bottle holder on the cycle and put a 1 Liter bottle
 there. Also I used an attachment to fix the portable pump onto the
 frame of the cycle itself. So in the end I was carrying about 2
@@ -1500,7 +1559,7 @@ checked the indexing of the gears, loaded up the gears, dressed up for
 the event and Left. :-P I left at 5:30 in the morning which was a mere
 half hour behind schedule.&lt;/p&gt;
 &lt;p&gt;This is how it looked fully loaded.
-&lt;img alt="Fully Loaded" src="/assets/images/2017-11-08/fullyLoaded.jpg" /&gt;&lt;/p&gt;
+&lt;img alt="Fully Loaded" src="/assets/images/2017-11-08/fullyLoaded.jpg"&gt;&lt;/p&gt;
 &lt;p&gt;The first leg of the journey was amazing without any hiccups. The
 weather was amazing, it was cool and the sun was merciful. I crossed
 the "Welcome to Tumkur" sign on the highway at 8:22. So this leg took
@@ -1510,7 +1569,7 @@ average speed of 20 kmph which is not at all bad especially if we
 consider the fact this is my first 100km ride and my third long
 distance ride in my life (yes!!).&lt;/p&gt;
 &lt;p&gt;Here is a pic. :-P
-&lt;img alt="Welcome to Tumkur" src="/assets/images/2017-11-08/welcomeToTumkur.jpg" /&gt;&lt;/p&gt;
+&lt;img alt="Welcome to Tumkur" src="/assets/images/2017-11-08/welcomeToTumkur.jpg"&gt;&lt;/p&gt;
 &lt;p&gt;Then I stopped at a bakery to have some jam-bun (white-bread + jam)
 which was good decision as I think that this gave me more than enough
 energy and also some well-needed rest for my legs. I also refilled my
@@ -1518,7 +1577,7 @@ water bottle. I had used only about 750ml out of the total water that
 I was carrying.&lt;/p&gt;
 &lt;p&gt;Weird thing. There was a distance marker at Tumkur that said that
 Bangalore was 70kms from that point. Here it is.&lt;/p&gt;
-&lt;p&gt;&lt;img alt="weird distance marker" src="/assets/images/2017-11-08/signBoard1.jpg" /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="weird distance marker" src="/assets/images/2017-11-08/signBoard1.jpg"&gt;&lt;/p&gt;
 &lt;p&gt;This was very unsettling because this was weird, conflicting and new
 information. Then it hit me that maybe what is Bangalore and what is
 Tumkur is not fixed. Maybe they were measuring Bangalore from that
@@ -1536,22 +1595,22 @@ especially on a sunny day) for multiples times. I think I had to push
 my cycle about 4 or 5 times. I did not push them too much, maybe just
 about 1 km or so. But yeah these were some well needed rests.&lt;/p&gt;
 &lt;p&gt;This is a pic when I was resting under a tree. 
-&lt;img alt="Random Stop" src="/assets/images/2017-11-08/randomStop.jpg" /&gt;&lt;/p&gt;
+&lt;img alt="Random Stop" src="/assets/images/2017-11-08/randomStop.jpg"&gt;&lt;/p&gt;
 &lt;p&gt;I reached my hostel at 12:30 which was over 6 hours. I am actually very
 surprised that I managed to maintain a decent 20kmps overall. :-P&lt;/p&gt;
 &lt;h3&gt;PHOTOS!!!&lt;/h3&gt;
 &lt;p&gt;Did I mention that I took photos :-P ? (I absolutely love the camera
 in this new phone :-) )&lt;/p&gt;
 &lt;p&gt;This was just before starting right in front of my hostel gate.
-&lt;img alt="Starting" src="/assets/images/2017-11-08/justStarting.jpg" /&gt;&lt;/p&gt;
+&lt;img alt="Starting" src="/assets/images/2017-11-08/justStarting.jpg"&gt;&lt;/p&gt;
 &lt;p&gt;This was a random location where I stopped
-&lt;img alt="random" src="/assets/images/2017-11-08/firstStop.jpg" /&gt;&lt;/p&gt;
+&lt;img alt="random" src="/assets/images/2017-11-08/firstStop.jpg"&gt;&lt;/p&gt;
 &lt;p&gt;A random tree with a random hill in the background.
-&lt;img alt="random" src="/assets/images/2017-11-08/randomShot1.jpg" /&gt;&lt;/p&gt;
+&lt;img alt="random" src="/assets/images/2017-11-08/randomShot1.jpg"&gt;&lt;/p&gt;
 &lt;p&gt;A random hill with weird looking clouds
-&lt;img alt="random" src="/assets/images/2017-11-08/randomShot2.jpg" /&gt;&lt;/p&gt;
+&lt;img alt="random" src="/assets/images/2017-11-08/randomShot2.jpg"&gt;&lt;/p&gt;
 &lt;p&gt;The not-random sun behind weird clouds
-&lt;img alt="random" src="/assets/images/2017-11-08/randomShot3.jpg" /&gt;&lt;/p&gt;
+&lt;img alt="random" src="/assets/images/2017-11-08/randomShot3.jpg"&gt;&lt;/p&gt;
 &lt;h3&gt;Conclusion&lt;/h3&gt;
 &lt;p&gt;It was super fun and I think that I will keep on doing this again and
 again. Next goal is Mysore. :-P&lt;/p&gt;
@@ -1560,17 +1619,22 @@ phenomenal. I had no idea it would be this amazing.&lt;/p&gt;
 &lt;p&gt;Here is what OsmAnd has to say about the trip with Speed (Orange) and
 Altitude (Blue) on the same graph. I think we can clearly see the
 correlation between the altitude and the speed.&lt;/p&gt;
-&lt;p&gt;&lt;img alt="osmand Overall" src="/assets/images/2017-11-08/osmandBoth.jpg" /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="osmand Overall" src="/assets/images/2017-11-08/osmandBoth.jpg"&gt;&lt;/p&gt;
 &lt;p&gt;The speed part of the GPX track is also interesting which says my
 maximum speed was 46 km/hr which was just for a short while during the
 starting phase. I think this was during the descend from my hostel
 towards jalahalli via Tumkur Road.&lt;/p&gt;
-&lt;p&gt;&lt;img alt="osmand speed" src="/assets/images/2017-11-08/osmandSpeed.jpg" /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="osmand speed" src="/assets/images/2017-11-08/osmandSpeed.jpg"&gt;&lt;/p&gt;
 &lt;p&gt;Here is
 the
 &lt;a href="/assets/files/2017-11-08/2017-11-02_05-39_Thu(100KM).gpx"&gt;GPX track&lt;/a&gt;
 just in case.&lt;/p&gt;
-&lt;p&gt;p.s. this was longer than I expected it would be. :-P&lt;/p&gt;</summary><category term="Cycling"></category><category term="Travel"></category></entry><entry><title>My First Bicycle</title><link href="https://signalshore.github.io/blog/My-First-Bicycle.html" rel="alternate"></link><published>2017-10-26T00:00:00+05:30</published><updated>2017-10-26T00:00:00+05:30</updated><author><name>Sohom</name></author><id>tag:signalshore.github.io,2017-10-26:blog/My-First-Bicycle.html</id><summary type="html">&lt;h3&gt;Prologue&lt;/h3&gt;
+&lt;p&gt;p.s. this was longer than I expected it would be. :-P&lt;/p&gt;</content><category term="Cycling"></category><category term="Travel"></category></entry><entry><title>My First Bicycle</title><link href="https://signalshore.github.io/blog/My-First-Bicycle.html" rel="alternate"></link><published>2017-10-26T00:00:00+05:30</published><updated>2017-10-26T00:00:00+05:30</updated><author><name>Sohom</name></author><id>tag:signalshore.github.io,2017-10-26:/blog/My-First-Bicycle.html</id><summary type="html">&lt;h3&gt;Prologue&lt;/h3&gt;
+&lt;p&gt;I have been interested in bicycles for as long as I can remember. For
+me they represent the ultimate form of Open Design and practical implications of
+physics in a much more feel-able way. &lt;/p&gt;
+&lt;p&gt;However I never owned a geared bicycle and ever since I moved to
+Bangalore I …&lt;/p&gt;</summary><content type="html">&lt;h3&gt;Prologue&lt;/h3&gt;
 &lt;p&gt;I have been interested in bicycles for as long as I can remember. For
 me they represent the ultimate form of Open Design and practical implications of
 physics in a much more feel-able way. &lt;/p&gt;
@@ -1584,7 +1648,7 @@ buy one myself. :-)&lt;/p&gt;
 at IISc and he was going home after completing his studies. He had
 really cared for this cycle. It is about 5 years old but the
 components are really really well maintained. &lt;/p&gt;
-&lt;p&gt;Here it is. &lt;img alt="My cycle pic" src="/assets/images/2017-10-26/normal.jpg" /&gt;&lt;/p&gt;
+&lt;p&gt;Here it is. &lt;img alt="My cycle pic" src="/assets/images/2017-10-26/normal.jpg"&gt;&lt;/p&gt;
 &lt;p&gt;Before riding a premium cycle I had no idea that premium bicycles were
 this good. The first time I rode a premium bicycle was a btwin
 original. I had borrowed this cycle from Arun and we went for a 50k
@@ -1625,7 +1689,7 @@ wheels and stuff. It was a great experience.&lt;/p&gt;
 for a quick ride because of an emergency.&lt;/p&gt;
 &lt;p&gt;I was planning to clean the chain using kerosene but that never
 happened. It's on my to-do list though!&lt;/p&gt;
-&lt;p&gt;Here is a photo of the process. &lt;img alt="Cleaning" src="/assets/images/2017-10-26/clean.jpg" /&gt;&lt;/p&gt;
+&lt;p&gt;Here is a photo of the process. &lt;img alt="Cleaning" src="/assets/images/2017-10-26/clean.jpg"&gt;&lt;/p&gt;
 &lt;p&gt;&lt;blue&gt; What is so special about cycling anyway ?  &lt;/blue&gt; &lt;/p&gt;
 &lt;p&gt;Even though I can not put a finger on it, I would it is the open-ness
 of the whole system that appeals to me at a personal level. As much as
@@ -1652,7 +1716,12 @@ find most lacking in people now a days. (:-P)&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;Start Cycling; Keep Cycling. &lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;p.s. I do not click many photos and my phone camera was behaving funny with a custom ROM so the pics can be a bit off! &lt;/p&gt;</summary><category term="Cycling"></category></entry><entry><title>The Big Picture</title><link href="https://signalshore.github.io/blog/The-Big-Picture.html" rel="alternate"></link><published>2017-10-07T00:00:00+05:30</published><updated>2017-10-07T00:00:00+05:30</updated><author><name>Sohom</name></author><id>tag:signalshore.github.io,2017-10-07:blog/The-Big-Picture.html</id><summary type="html">&lt;h3&gt;Disclaimer&lt;/h3&gt;
+&lt;p&gt;p.s. I do not click many photos and my phone camera was behaving funny with a custom ROM so the pics can be a bit off! &lt;/p&gt;</content><category term="Cycling"></category></entry><entry><title>The Big Picture</title><link href="https://signalshore.github.io/blog/The-Big-Picture.html" rel="alternate"></link><published>2017-10-07T00:00:00+05:30</published><updated>2017-10-07T00:00:00+05:30</updated><author><name>Sohom</name></author><id>tag:signalshore.github.io,2017-10-07:/blog/The-Big-Picture.html</id><summary type="html">&lt;h3&gt;Disclaimer&lt;/h3&gt;
+&lt;p&gt;This post is the result of a train of thought that was triggered by an
+interaction with a human being who is very close to me.&lt;/p&gt;
+&lt;h3&gt;Prologue&lt;/h3&gt;
+&lt;p&gt;So this person recently got into a really cool training program in a
+cutting edge scientific field that is conducted by a …&lt;/p&gt;</summary><content type="html">&lt;h3&gt;Disclaimer&lt;/h3&gt;
 &lt;p&gt;This post is the result of a train of thought that was triggered by an
 interaction with a human being who is very close to me.&lt;/p&gt;
 &lt;h3&gt;Prologue&lt;/h3&gt;
@@ -1715,7 +1784,11 @@ job gets done with the best possible quality. &lt;/p&gt;
 &lt;p&gt;So what I am trying to say is this; If you are incompetent; then you
 are incompetent and your level of competency does not depend on your
 opponents competency.&lt;/p&gt;
-&lt;p&gt;Work on yourself and let the rest sort itself out. :-)&lt;/p&gt;</summary><category term="Meta"></category></entry><entry><title>First Job at Azim Premji Foundation</title><link href="https://signalshore.github.io/blog/My-First-Job-at-Azim-Premji-Foundation.html" rel="alternate"></link><published>2017-09-20T00:00:00+05:30</published><updated>2017-09-20T00:00:00+05:30</updated><author><name>Sohom</name></author><id>tag:signalshore.github.io,2017-09-20:blog/My-First-Job-at-Azim-Premji-Foundation.html</id><summary type="html">&lt;h3&gt;Prologue&lt;/h3&gt;
+&lt;p&gt;Work on yourself and let the rest sort itself out. :-)&lt;/p&gt;</content><category term="Meta"></category></entry><entry><title>First Job at Azim Premji Foundation</title><link href="https://signalshore.github.io/blog/My-First-Job-at-Azim-Premji-Foundation.html" rel="alternate"></link><published>2017-09-20T00:00:00+05:30</published><updated>2017-09-20T00:00:00+05:30</updated><author><name>Sohom</name></author><id>tag:signalshore.github.io,2017-09-20:/blog/My-First-Job-at-Azim-Premji-Foundation.html</id><summary type="html">&lt;h3&gt;Prologue&lt;/h3&gt;
+&lt;p&gt;I got my first job on 14th April 2017. The company was Azim Premji
+Foundation and my official role was that of a Technical Consultant. In
+this I was to train the content-development team on the Ins and Outs
+of Linux and be a guide on their whole learning …&lt;/p&gt;</summary><content type="html">&lt;h3&gt;Prologue&lt;/h3&gt;
 &lt;p&gt;I got my first job on 14th April 2017. The company was Azim Premji
 Foundation and my official role was that of a Technical Consultant. In
 this I was to train the content-development team on the Ins and Outs
@@ -1826,7 +1899,8 @@ simple enough. Nah! not true again!!! I couldn't be more
 wrong. Compiling LFS (Linux From Scratch) has been third best thing in this exercise.&lt;/p&gt;
 &lt;h3&gt;Conclusion&lt;/h3&gt;
 &lt;p&gt;At the end of these 6 amazing months I think its fair enough to say that
-I learned a lot more from them than they learned from me and looking back I had no idea that this exercise would be such an amazing educational experience for me. Being teachers is not easy and I have more respect for teachers now than I did about 6 months ago. Sure there can be good teachers and bad teachers (I hope I was a good one!) but apart from the one-off cases; most of the teachers are amazing.&lt;/p&gt;</summary><category term="Misc"></category><category term="Work"></category><category term="Linux"></category></entry><entry><title>Experience with Data Recovery</title><link href="https://signalshore.github.io/blog/Experience-With-Data-Recovery.html" rel="alternate"></link><published>2017-07-20T00:00:00+05:30</published><updated>2017-07-20T00:00:00+05:30</updated><author><name>Sohom</name></author><id>tag:signalshore.github.io,2017-07-20:blog/Experience-With-Data-Recovery.html</id><summary type="html">&lt;h3&gt;Prologue&lt;/h3&gt;
+I learned a lot more from them than they learned from me and looking back I had no idea that this exercise would be such an amazing educational experience for me. Being teachers is not easy and I have more respect for teachers now than I did about 6 months ago. Sure there can be good teachers and bad teachers (I hope I was a good one!) but apart from the one-off cases; most of the teachers are amazing.&lt;/p&gt;</content><category term="Misc"></category><category term="Work"></category><category term="Linux"></category></entry><entry><title>Experience with Data Recovery</title><link href="https://signalshore.github.io/blog/Experience-With-Data-Recovery.html" rel="alternate"></link><published>2017-07-20T00:00:00+05:30</published><updated>2017-07-20T00:00:00+05:30</updated><author><name>Sohom</name></author><id>tag:signalshore.github.io,2017-07-20:/blog/Experience-With-Data-Recovery.html</id><summary type="html">&lt;h3&gt;Prologue&lt;/h3&gt;
+&lt;p&gt;We have been planning to set up a backup utility on Sam but somehow we never quite got around to actually doing it. However this week we finally decided to do it. We decided to try out &lt;a href="https://obnam.org/"&gt;Obnam&lt;/a&gt;. Things were going good until we needed to delete a directory …&lt;/p&gt;</summary><content type="html">&lt;h3&gt;Prologue&lt;/h3&gt;
 &lt;p&gt;We have been planning to set up a backup utility on Sam but somehow we never quite got around to actually doing it. However this week we finally decided to do it. We decided to try out &lt;a href="https://obnam.org/"&gt;Obnam&lt;/a&gt;. Things were going good until we needed to delete a directory.&lt;/p&gt;
 &lt;p&gt;Now remember that this directory was local directory and not a system directory unlike how the name suggests. The directory in question is "mnt".
 Yes we had set up the dummy directory tree for experimenting with the backup tool and it had a mnt in it. &lt;/p&gt;
@@ -1834,7 +1908,7 @@ Yes we had set up the dummy directory tree for experimenting with the backup too
 Notice the '/' in the command he typed, Yep true story. Completely nuked all the mounted partitions.&lt;/p&gt;
 &lt;h3&gt;Some Context&lt;/h3&gt;
 &lt;p&gt;Okay we need some context. This is how &lt;code&gt;lsblk&lt;/code&gt; looks on our system (Sam). The important partitions that store all the main data and media (movies and documentaries and Pics) are the &lt;code&gt;/dev/sda4&lt;/code&gt; and &lt;code&gt;/dev/sda5&lt;/code&gt;. As both of them were mounted they both were completely deleted. &lt;/p&gt;
-&lt;p&gt;&lt;img alt="image" src="/assets/images/2017-07-20/lsblk.png" /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="image" src="/assets/images/2017-07-20/lsblk.png"&gt;&lt;/p&gt;
 &lt;h3&gt;Aftermath&lt;/h3&gt;
 &lt;p&gt;Okay so what DID we lose ?&lt;/p&gt;
 &lt;ul&gt;
@@ -1850,18 +1924,18 @@ Notice the '/' in the command he typed, Yep true story. Completely nuked all the
 &lt;p&gt;Now this is where we will trace the thinking that enabled us to get back almost all of our data. &lt;/p&gt;
 &lt;p&gt;The First thing that we did was to unmount the affected partitions so as stop any data being overwritten on those partitions. This would increase the chances of getting most of our data back.&lt;/p&gt;
 &lt;p&gt;Then we downloaded &lt;a href="https://www.cgsecurity.org/wiki/PhotoRec"&gt;PhotoRec&lt;/a&gt; ( in Arch it is packaged with the TestDisk package ). We started PhotoRec form the terminal and followed the steps to select the partition we wanted to recover and also we had to select the partition where the recovered files would be stored. It is recommended that the partition where you store the recovered files and the partition that you want to recover data from be different partitions as this would reduce the chances of the old data being overwritten. &lt;/p&gt;
-&lt;p&gt;Now after this you might see something like this. &lt;img alt="PhotoRec working" src="/assets/images/2017-07-20/photorec.png" /&gt;.&lt;/p&gt;
+&lt;p&gt;Now after this you might see something like this. &lt;img alt="PhotoRec working" src="/assets/images/2017-07-20/photorec.png"&gt;.&lt;/p&gt;
 &lt;p&gt;This is normal and its perfectly fine to go about doing other stuff that you have to do while PhotoRec "walks" through the file-system and recovers files for you. &lt;/p&gt;
 &lt;p&gt;One thing we should remember is that the recovery part is not such a pain! PhotoRec is amazing and does an amazing job. The main pain is actually picking up the files that YOU want from he whole bunch of recovered files. This is because since PhotoRec does not have any method to determine if the deleted files were deleted accidentally or not, it recovers everything that was deleted and not overwritten. Thus we have a LOT of work to do. &lt;/p&gt;
 &lt;h3&gt;After the recovery&lt;/h3&gt;
 &lt;p&gt;These are some of the things that PhotoRec does after recovering the files.
-&lt;em&gt; Stores everything under multiple &lt;code&gt;recup_dir.&amp;lt;integer&amp;gt;&lt;/code&gt; directories. It looks something like this &lt;img alt="recovery ls" src="/assets/images/2017-07-20/reco_ls.png" /&gt;
+&lt;em&gt; Stores everything under multiple &lt;code&gt;recup_dir.&amp;lt;integer&amp;gt;&lt;/code&gt; directories. It looks something like this &lt;img alt="recovery ls" src="/assets/images/2017-07-20/reco_ls.png"&gt;
 &lt;/em&gt; Every file other than text files are properly named. As in other than text files all other files have their proper extensions. Thus PhotoRec doesn't mix up JPEG and PNG files.
 &lt;em&gt; That being said it does mix up text files. As in recovered Java files would sometimes be named as C++ header files and so on.
 &lt;/em&gt; PhotoRec also recovers ELF files which are nothing but executable files.&lt;/p&gt;
 &lt;p&gt;&lt;blue&gt; How do we go about sorting this mess ?&lt;/blue&gt;
 Our first idea was to launch &lt;a href="http://nongnu.org/ranger/"&gt;ranger&lt;/a&gt; and inspect every single directory and delete directories if the contents didn't feel too important. Something like this.
-&lt;img alt="manual" src="/assets/images/2017-07-20/manual.png" /&gt;
+&lt;img alt="manual" src="/assets/images/2017-07-20/manual.png"&gt;
 But there was a major flaw with this system. There were a lot of files in those directories and going through each one of them would be a tedious and a very very stupid thing to do. &lt;/p&gt;
 &lt;p&gt;So we started making a list of the things that we lost and the things that we wanted to recovered from the mess. We figured that if we could not remember something that we had lost them we probably did not need it in the first place. Thus we figured that the most important stuff in the data directory ware the scripts that we had written for our Arch System. We also realized that we mostly needed text files from this partition recovery so we could delete all the non-text files and thus we started this massive assault on all non essential files. &lt;/p&gt;
 &lt;p&gt;Initially we were writing scripts like &lt;/p&gt;
@@ -1884,11 +1958,11 @@ But there was a major flaw with this system. There were a lot of files in those 
 
 &lt;p&gt;Now comes the interesting part. Remember those scripts that we wrote. We had a fairly good idea about the contents of those scripts so we could do a recursive grep with those keywords and BOOM! &lt;/p&gt;
 &lt;p&gt;This is the first script which had a lot of i3-msg in it.
-&lt;img alt="i3-msg" src="/assets/images/2017-07-20/i3-msg.png" /&gt;
+&lt;img alt="i3-msg" src="/assets/images/2017-07-20/i3-msg.png"&gt;
 Similarly we found all the other scripts.&lt;/p&gt;
 &lt;h3&gt;The Second Partition&lt;/h3&gt;
 &lt;p&gt;This partition posed a different kind of challenge. We wanted to recover all the images that we had. We ran PhotoRec with the option that would only recover only the JPEG files. But even after that we had about 12000+ JPEG files. Moreover inspection with ranger showed that certain files were duplicated. To confirm our assumption we check the MD5 hash of two such files.&lt;/p&gt;
-&lt;p&gt;&lt;img alt="duplicate" src="/assets/images/2017-07-20/dupli.png" /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="duplicate" src="/assets/images/2017-07-20/dupli.png"&gt;&lt;/p&gt;
 &lt;p&gt;As you can see both the files have the same MD5 hash and thus they are essentially the same files. So now we needed a script that would sort the duplicate files out.&lt;/p&gt;
 &lt;p&gt;We followed the instructions in this article and installed fdupes and let it run amok and remove all the duplicate files we had.&lt;/p&gt;
 &lt;p&gt;Also we figured out that there were a lot of files that were 100kb or less. These were thumbnail files we believe. So we did this&lt;/p&gt;
@@ -1903,7 +1977,10 @@ Similarly we found all the other scripts.&lt;/p&gt;
 &lt;li&gt;OFFSITE BACKUPS&lt;/li&gt;
 &lt;li&gt;ALWAYS HAVE BACKUPS BEFORE PLAYING WITH IMPORTANT FILES&lt;/li&gt;
 &lt;li&gt;PhotoRec is pretty awesome&lt;/li&gt;
-&lt;/ul&gt;</summary><category term="CS"></category><category term="Linux"></category></entry><entry><title>The Mess Called Kolkata</title><link href="https://signalshore.github.io/blog/The-Mess-called-Kolkata.html" rel="alternate"></link><published>2017-05-14T00:00:00+05:30</published><updated>2017-05-14T00:00:00+05:30</updated><author><name>Sohom</name></author><id>tag:signalshore.github.io,2017-05-14:blog/The-Mess-called-Kolkata.html</id><summary type="html">&lt;h3&gt;Prologue&lt;/h3&gt;
+&lt;/ul&gt;</content><category term="CS"></category><category term="Linux"></category></entry><entry><title>The Mess Called Kolkata</title><link href="https://signalshore.github.io/blog/The-Mess-called-Kolkata.html" rel="alternate"></link><published>2017-05-14T00:00:00+05:30</published><updated>2017-05-14T00:00:00+05:30</updated><author><name>Sohom</name></author><id>tag:signalshore.github.io,2017-05-14:/blog/The-Mess-called-Kolkata.html</id><summary type="html">&lt;h3&gt;Prologue&lt;/h3&gt;
+&lt;p&gt;I live in Bangalore as I am studying in Bangalore. My hometown is Kolkata. I keep visiting Kolkata after every semester break which generally lasts for about 3 weeks. &lt;/p&gt;
+&lt;h3&gt;The Decision&lt;/h3&gt;
+&lt;p&gt;Coming to Bangalore was not a properly planned decision. Generally moving to a new city for studies is …&lt;/p&gt;</summary><content type="html">&lt;h3&gt;Prologue&lt;/h3&gt;
 &lt;p&gt;I live in Bangalore as I am studying in Bangalore. My hometown is Kolkata. I keep visiting Kolkata after every semester break which generally lasts for about 3 weeks. &lt;/p&gt;
 &lt;h3&gt;The Decision&lt;/h3&gt;
 &lt;p&gt;Coming to Bangalore was not a properly planned decision. Generally moving to a new city for studies is an option that everyone has discussed at-least once in their lifetime. But not me. During my higher-secondary schooling the I had never even entertained the idea of moving to another city to study for an under-graduate degree. Planning and coming to Bangalore happened in like 1 month after my CBSE class 12 results. &lt;/p&gt;
@@ -1916,7 +1993,12 @@ Similarly we found all the other scripts.&lt;/p&gt;
 &lt;p&gt;So I decided that every semester break when I go to Kolkata I will trek around the city exploring it. My idea of exploring a city is somewhat different from the conventional idea. I do not follow a guide to the "must-visit" attractions. Rather I pick a place and I walk. I love walking. Walking through a city opens up another dimension to the city (I think this is because since you are slow while walking you can observe more stuff ?!! (maybe idk! ))&lt;/p&gt;
 &lt;h3&gt;The Plan&lt;/h3&gt;
 &lt;p&gt;The plan is that there is no plan. I will pick up a place and I will borrow a camera and I will walk and then I will write about it and I will post it with the pics. Most of the pics will have some description about the image and what not. This is gonna be Kolkata as I see it. &lt;/p&gt;
-&lt;p&gt;Also I may end up using a cycle for my trek but I am not so sure about the cycle. &lt;/p&gt;</summary><category term="Travel"></category></entry><entry><title>The Universe and The Reason</title><link href="https://signalshore.github.io/blog/The-Universe-and-the-reason.html" rel="alternate"></link><published>2017-04-10T00:00:00+05:30</published><updated>2017-04-10T00:00:00+05:30</updated><author><name>Sohom</name></author><id>tag:signalshore.github.io,2017-04-10:blog/The-Universe-and-the-reason.html</id><summary type="html">&lt;h3&gt;Disclaimer&lt;/h3&gt;
+&lt;p&gt;Also I may end up using a cycle for my trek but I am not so sure about the cycle. &lt;/p&gt;</content><category term="Travel"></category></entry><entry><title>The Universe and The Reason</title><link href="https://signalshore.github.io/blog/The-Universe-and-the-reason.html" rel="alternate"></link><published>2017-04-10T00:00:00+05:30</published><updated>2017-04-10T00:00:00+05:30</updated><author><name>Sohom</name></author><id>tag:signalshore.github.io,2017-04-10:/blog/The-Universe-and-the-reason.html</id><summary type="html">&lt;h3&gt;Disclaimer&lt;/h3&gt;
+&lt;p&gt;This essay originated as a series of messages between me and my friend
+(you know who you are). After that I took those messages and worked on
+this for quite some time to polish then into something presentable.&lt;/p&gt;
+&lt;h3&gt;Okay! so ...&lt;/h3&gt;
+&lt;p&gt;Humanity always had a special relationship with reason. Reason …&lt;/p&gt;</summary><content type="html">&lt;h3&gt;Disclaimer&lt;/h3&gt;
 &lt;p&gt;This essay originated as a series of messages between me and my friend
 (you know who you are). After that I took those messages and worked on
 this for quite some time to polish then into something presentable.&lt;/p&gt;
@@ -1965,7 +2047,9 @@ what is ultimately out there and reason because reason is how we
 insignificant beings communicate with the universe. The universe is
 the ultimate form of power and grandeur. Nothing can beat its elegance
 and majesticity. When compared to the universe, you truly are
-insignificant. And that is also a powerful feeling.&lt;/p&gt;</summary><category term="Meta"></category></entry><entry><title>The beginning</title><link href="https://signalshore.github.io/blog/The-beginning.html" rel="alternate"></link><published>2017-03-25T00:00:00+05:30</published><updated>2017-03-25T00:00:00+05:30</updated><author><name>Sohom</name></author><id>tag:signalshore.github.io,2017-03-25:blog/The-beginning.html</id><summary type="html">&lt;h3&gt;Whats the plan&lt;/h3&gt;
+insignificant. And that is also a powerful feeling.&lt;/p&gt;</content><category term="Meta"></category></entry><entry><title>The beginning</title><link href="https://signalshore.github.io/blog/The-beginning.html" rel="alternate"></link><published>2017-03-25T00:00:00+05:30</published><updated>2017-03-25T00:00:00+05:30</updated><author><name>Sohom</name></author><id>tag:signalshore.github.io,2017-03-25:/blog/The-beginning.html</id><summary type="html">&lt;h3&gt;Whats the plan&lt;/h3&gt;
+&lt;p&gt;The plan is that there is no plan. We have no idea about what we are trying to do here. All we know is that we will be writing about &lt;em&gt;stuff&lt;/em&gt; and then publish them. &lt;/p&gt;
+&lt;p&gt;This was planned for a long time and we have really put …&lt;/p&gt;</summary><content type="html">&lt;h3&gt;Whats the plan&lt;/h3&gt;
 &lt;p&gt;The plan is that there is no plan. We have no idea about what we are trying to do here. All we know is that we will be writing about &lt;em&gt;stuff&lt;/em&gt; and then publish them. &lt;/p&gt;
 &lt;p&gt;This was planned for a long time and we have really put in a lot of effort into making this blog (mostly the design part).&lt;/p&gt;
 &lt;p&gt;Also since we are learning LISP and like parentheses (&lt;a href="https://github.com/Fuco1/smartparens"&gt;smartparens&lt;/a&gt; in &lt;a href="https://www.gnu.org/software/emacs/"&gt;Emacs&lt;/a&gt; makes you love parentheses!!) we will be using a lot of parentheses. &lt;/p&gt;
@@ -1982,4 +2066,4 @@ Just like any other human out there this blog was also inspired by certain indiv
 &lt;li&gt;
 &lt;p&gt;&lt;a href="https://cosmobird.github.io"&gt;Cosmobird&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
-&lt;/ul&gt;</summary><category term="Meta"></category></entry></feed>
+&lt;/ul&gt;</content><category term="Meta"></category></entry></feed>
