@@ -3,16 +3,15 @@
 &lt;p&gt;This is the second part of my Lambda Calculus
 series. The
 &lt;a href="https://signalshore.github.io/blog/Lambda-Calculus-Part-1.html"&gt;first part&lt;/a&gt; can
-be found here.  recommend reading it first before starting off with
+be found here. I strongly recommend reading it first before starting off with
 this one.&lt;/p&gt;
 &lt;h3&gt;What is Computation ?&lt;/h3&gt;
 &lt;p&gt;Lambda calculus is formal system for representing computation in
-Mathematical Logic. Sit and think about the phrase &lt;em&gt;representing
-computation …&lt;/em&gt;&lt;/p&gt;</summary><content type="html">&lt;h3&gt;Prologue&lt;/h3&gt;
+Mathematical Logic. Sit and think about the phrase …&lt;/p&gt;</summary><content type="html">&lt;h3&gt;Prologue&lt;/h3&gt;
 &lt;p&gt;This is the second part of my Lambda Calculus
 series. The
 &lt;a href="https://signalshore.github.io/blog/Lambda-Calculus-Part-1.html"&gt;first part&lt;/a&gt; can
-be found here.  recommend reading it first before starting off with
+be found here. I strongly recommend reading it first before starting off with
 this one.&lt;/p&gt;
 &lt;h3&gt;What is Computation ?&lt;/h3&gt;
 &lt;p&gt;Lambda calculus is formal system for representing computation in
@@ -20,9 +19,9 @@ Mathematical Logic. Sit and think about the phrase &lt;em&gt;representing
 computation&lt;/em&gt; for a moment.&lt;/p&gt;
 &lt;p&gt;What does it mean for something to be computable ?&lt;/p&gt;
 &lt;p&gt;Everyday in out lives we use a computer in one form or another,
-i.e. computation takes place every single day in numerous methods, but
-do we know what computation really is ? Gerry Sussan said in SICP (I
-might be paraphrasing him here) &lt;/p&gt;
+i.e. computation takes place every single day in numerous ways, but
+do we know what computation really is ? &lt;/p&gt;
+&lt;p&gt;Gerald Jay Sussman said in SICP (Structure and Interpretation of Computer Programs) and I might be paraphrasing him a bit here:&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;It's always harder in computer science to talk about what something
 means than to go about and do it.&lt;/p&gt;
@@ -32,14 +31,14 @@ means than to go about and do it.&lt;/p&gt;
 based answer and that would in fact be accurate; but, that is not what
 we are concerned with here. We are more concerned about the logical
 meaning of computation.&lt;/p&gt;
-&lt;p&gt;Alan Turing invented the Turing machine and that is one of the most
+&lt;p&gt;Alan Turing invented the Turing machine which is one of the most
 robust models of computation. When we talk about &lt;em&gt;models of
 computation&lt;/em&gt; we abstract away all the boring details (like time
 complexity and space complexity etc :-P ) and try to deal with the
 meaning of computation at a much abstract level.  Alan Turing's Turing
 Machine captures the idea of computation in a mechanical sense.&lt;/p&gt;
 &lt;p&gt;At the same time (actually before Alan Turing) the logician Alonzo
-Church came up with lambda Calculus to capture the very same thing.&lt;/p&gt;
+Church came up with Lambda Calculus to capture the very same thing but in a mathematically formal manner. &lt;/p&gt;
 &lt;h3&gt;What is Lambda Calculus&lt;/h3&gt;
 &lt;p&gt;Lambda Calculus syntax is very simple. It mainly consists of
 expressions (we call them Lambda Expressions), variables, constants
