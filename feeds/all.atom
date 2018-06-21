@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>SignalShore</title><link href="https://signalshore.github.io/" rel="alternate"></link><link href="https://signalshore.github.io/feeds/all.atom" rel="self"></link><id>https://signalshore.github.io/</id><updated>2018-07-21T00:00:00+05:30</updated><entry><title>CO2 trends between India and USA</title><link href="https://signalshore.github.io/blog/CO2-trends-between-India-and-USA.html" rel="alternate"></link><published>2018-07-21T00:00:00+05:30</published><updated>2018-07-21T00:00:00+05:30</updated><author><name>Sohom</name></author><id>tag:signalshore.github.io,2018-07-21:/blog/CO2-trends-between-India-and-USA.html</id><summary type="html">&lt;h1&gt;Disclaimer and Introduction&lt;/h1&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>SignalShore</title><link href="https://signalshore.github.io/" rel="alternate"></link><link href="https://signalshore.github.io/feeds/all.atom" rel="self"></link><id>https://signalshore.github.io/</id><updated>2018-06-21T00:00:00+05:30</updated><entry><title>CO2 trends between India and USA</title><link href="https://signalshore.github.io/blog/CO2-trends-between-India-and-USA.html" rel="alternate"></link><published>2018-06-21T00:00:00+05:30</published><updated>2018-06-21T00:00:00+05:30</updated><author><name>Sohom</name></author><id>tag:signalshore.github.io,2018-06-21:/blog/CO2-trends-between-India-and-USA.html</id><summary type="html">&lt;h1&gt;Disclaimer and Introduction&lt;/h1&gt;
 &lt;p&gt;I am by no means an expert in Data Science. I am just starting to
 explore the vast field of data science because of a lot of other cool
 things that I like reading about rely heavily on Data Analystics.&lt;/p&gt;
@@ -48,11 +48,11 @@ really very shocking (maybe I was expecting something else :-P)&lt;/p&gt;
 &lt;h2&gt;Results&lt;/h2&gt;
 &lt;h3&gt;Correlation between CO2 per capita and GDP per capita for INDIA&lt;/h3&gt;
 &lt;p&gt;Here is the graph that shows the CO2 emissions per capita from 1960 to 2011.
-&lt;img alt="India CO2 per capita" src="/assets/images/2018-07-21/indiaCo2.png"&gt;&lt;/p&gt;
+&lt;img alt="India CO2 per capita" src="/assets/images/2018-06-21/indiaCo2.png"&gt;&lt;/p&gt;
 &lt;p&gt;Next, let us see the GDP from 1960 to 2014.
-&lt;img alt="India GDP per capita" src="/assets/images/2018-07-21/indiaGdp.png"&gt;&lt;/p&gt;
+&lt;img alt="India GDP per capita" src="/assets/images/2018-06-21/indiaGdp.png"&gt;&lt;/p&gt;
 &lt;p&gt;Now we will use a scatter plot to look at the correlation.
-&lt;img alt="India correlation" src="/assets/images/2018-07-21/indiaCor.png"&gt;&lt;/p&gt;
+&lt;img alt="India correlation" src="/assets/images/2018-06-21/indiaCor.png"&gt;&lt;/p&gt;
 &lt;p&gt;We have calculated a correlation value of 0.967 using the
 the
 &lt;a href="https://docs.scipy.org/doc/numpy/reference/generated/numpy.corrcoef.html"&gt;numpy.corrcoef&lt;/a&gt; method. This
@@ -61,28 +61,28 @@ the
 &lt;a href="https://en.wikipedia.org/wiki/Pearson_correlation_coefficient"&gt;Pearson correlation coefficient&lt;/a&gt;.&lt;/p&gt;
 &lt;h3&gt;Correlation between CO2 per Capita and GDP per capita for USA&lt;/h3&gt;
 &lt;p&gt;Here is the graph that shows the CO2 emissions per capita from 1960 to 2011.
-&lt;img alt="USA CO2 per capita" src="/assets/images/2018-07-21/usaCo2.png"&gt;&lt;/p&gt;
+&lt;img alt="USA CO2 per capita" src="/assets/images/2018-06-21/usaCo2.png"&gt;&lt;/p&gt;
 &lt;p&gt;Next, let us see the GDP from 1960 to 2014.
-&lt;img alt="USA GDP per capita" src="/assets/images/2018-07-21/usaGdp.png"&gt;&lt;/p&gt;
+&lt;img alt="USA GDP per capita" src="/assets/images/2018-06-21/usaGdp.png"&gt;&lt;/p&gt;
 &lt;p&gt;Now we will use a scatter plot to look at the correlation.
-&lt;img alt="USA correlation" src="/assets/images/2018-07-21/usaCor.png"&gt;&lt;/p&gt;
+&lt;img alt="USA correlation" src="/assets/images/2018-06-21/usaCor.png"&gt;&lt;/p&gt;
 &lt;p&gt;We have calculated a correlation value of 0.067 which is almost negligible.&lt;/p&gt;
 &lt;p&gt;NOTE: Can we take a moment here and just marvel at the staggering difference in the Y-axis vales for the CO2 emissions per capita and the GDP per capita vales for India and USA.&lt;/p&gt;
 &lt;p&gt;For India the range of the Y-axis of the CO2 emissions is 0-2.0 metric tons per capita while the same range is 0-25 metric tons per capita or the USA.&lt;/p&gt;
 &lt;p&gt;Similarly the range of the Y-axis of GDP per capita is 0-1200 US for India while the same range is 0-50000 US$ for the USA. &lt;/p&gt;
 &lt;h3&gt;CO2 emissions by fuel types in India and USA&lt;/h3&gt;
-&lt;p&gt;&lt;img alt="India State" src="/assets/images/2018-07-21/indiaState.png"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="India State" src="/assets/images/2018-06-21/indiaState.png"&gt;&lt;/p&gt;
 &lt;p&gt;In this we can see that most of CO2 emissions in India are due to solid fuels. &lt;/p&gt;
-&lt;p&gt;&lt;img alt="USA State" src="/assets/images/2018-07-21/usaState.png"&gt;
+&lt;p&gt;&lt;img alt="USA State" src="/assets/images/2018-06-21/usaState.png"&gt;
 In USA the major source of CO2 emission is from the combustion of liquid forms of fuel. &lt;/p&gt;
 &lt;h3&gt;CO2 emissions by economic activities&lt;/h3&gt;
 &lt;p&gt;Now in this graph we show the different sets of economic activities that are responsible for CO2 emissions.&lt;/p&gt;
-&lt;p&gt;&lt;img alt="India per" src="/assets/images/2018-07-21/indiaPer.png"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="India per" src="/assets/images/2018-06-21/indiaPer.png"&gt;&lt;/p&gt;
 &lt;p&gt;As we can see that the major contributor of CO2 emissions in India is
 the production of Electricity and Heating, followed by the
 Manufacturing and Construction related activities.&lt;/p&gt;
 &lt;p&gt;Now, let us look at the graph for the USA.
-&lt;img alt="USA per" src="/assets/images/2018-07-21/usaPer.png"&gt;&lt;/p&gt;
+&lt;img alt="USA per" src="/assets/images/2018-06-21/usaPer.png"&gt;&lt;/p&gt;
 &lt;p&gt;These two graphs are more or less similar in nature with one major
 difference. In the USA the Transportation sector is th second largest
 contributor to CO2 emissions unlike in India where the Manufacturing
