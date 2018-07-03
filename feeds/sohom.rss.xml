@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0"><channel><title>SignalShore - Sohom</title><link>https://signalshore.github.io/</link><description></description><lastBuildDate>Thu, 21 Jun 2018 00:00:00 +0530</lastBuildDate><item><title>CO2 trends between India and USA</title><link>https://signalshore.github.io/blog/CO2-trends-between-India-and-USA.html</link><description>&lt;h1&gt;Disclaimer and Introduction&lt;/h1&gt;
+<rss version="2.0"><channel><title>SignalShore - Sohom</title><link>https://signalshore.github.io/</link><description></description><lastBuildDate>Sat, 21 Jul 2018 00:00:00 +0530</lastBuildDate><item><title>The Infinity - How maths can blow your mind!!</title><link>https://signalshore.github.io/blog/The-Infinity.html</link><description>&lt;p&gt;I am writing this post because I am fascinated by the idea of infinity
+and I think it is something that we do not talk enough about.&lt;/p&gt;
+&lt;p&gt;Moreover off late I am reading about Theoretical Computer Science and
+I find encountering this concept again and again. I am just beginning …&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Sohom</dc:creator><pubDate>Sat, 21 Jul 2018 00:00:00 +0530</pubDate><guid isPermaLink="false">tag:signalshore.github.io,2018-07-21:/blog/The-Infinity.html</guid><category>Misc</category><category>Math</category></item><item><title>CO2 trends between India and USA</title><link>https://signalshore.github.io/blog/CO2-trends-between-India-and-USA.html</link><description>&lt;h1&gt;Disclaimer and Introduction&lt;/h1&gt;
 &lt;p&gt;I am by no means an expert in Data Science. I am just starting to
 explore the vast field of data science because of a lot of other cool
 things that I like reading about rely heavily on Data Analystics.&lt;/p&gt;
