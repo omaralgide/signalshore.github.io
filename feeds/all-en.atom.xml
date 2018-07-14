@@ -1,5 +1,34 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>SignalShore</title><link href="https://signalshore.github.io/" rel="alternate"></link><link href="https://signalshore.github.io/feeds/all-en.atom.xml" rel="self"></link><id>https://signalshore.github.io/</id><updated>2018-07-21T00:00:00+05:30</updated><entry><title>The Infinity - How maths can blow your mind!!</title><link href="https://signalshore.github.io/blog/The-Infinity.html" rel="alternate"></link><published>2018-07-21T00:00:00+05:30</published><updated>2018-07-21T00:00:00+05:30</updated><author><name>Sohom</name></author><id>tag:signalshore.github.io,2018-07-21:/blog/The-Infinity.html</id><summary type="html">&lt;p&gt;I am writing this post because I am fascinated by the idea of infinity
+<feed xmlns="http://www.w3.org/2005/Atom"><title>SignalShore</title><link href="https://signalshore.github.io/" rel="alternate"></link><link href="https://signalshore.github.io/feeds/all-en.atom.xml" rel="self"></link><id>https://signalshore.github.io/</id><updated>2018-07-14T00:00:00+05:30</updated><entry><title>Scheme - Part 5 - Prodecure and Processess</title><link href="https://signalshore.github.io/blog/Scheme-Part-5.html" rel="alternate"></link><published>2018-07-14T00:00:00+05:30</published><updated>2018-07-14T00:00:00+05:30</updated><author><name>Sohom</name></author><id>tag:signalshore.github.io,2018-07-14:/blog/Scheme-Part-5.html</id><summary type="html">&lt;p&gt;Can you define a process and a procedure ?&lt;/p&gt;
+&lt;p&gt;Think about it for a minute. Both of these terms are very common terms
+in Computer Science yet its so difficult to define them.&lt;/p&gt;
+&lt;p&gt;In this post I will break down what these two seemingly synonymous
+words mean and we will also …&lt;/p&gt;</summary><content type="html">&lt;p&gt;Can you define a process and a procedure ?&lt;/p&gt;
+&lt;p&gt;Think about it for a minute. Both of these terms are very common terms
+in Computer Science yet its so difficult to define them.&lt;/p&gt;
+&lt;p&gt;In this post I will break down what these two seemingly synonymous
+words mean and we will also have some nice Scheme programming tricks.&lt;/p&gt;
+&lt;h1&gt;Procedure&lt;/h1&gt;
+&lt;p&gt;A procedure is something that &lt;em&gt;defines&lt;/em&gt; the goal.&lt;/p&gt;
+&lt;p&gt;In computer science terms; we are defining a procedure when we are
+writing a function. The function most of the timie tell the computer
+&lt;em&gt;what&lt;/em&gt; to do and the &lt;em&gt;how&lt;/em&gt; to do it is often determined by the
+internals of the computer (this is not a completely correct statement;
+but that is not what we are talking about right not so this is a good
+&lt;em&gt;enough&lt;/em&gt; description).&lt;/p&gt;
+&lt;h1&gt;Process&lt;/h1&gt;
+&lt;p&gt;A process is the act of doing something (maybe this &lt;em&gt;doing&lt;/em&gt; is based
+on a procedure defined previously).&lt;/p&gt;
+&lt;p&gt;In Computer Science terms; a process is something that the System
+(system is an abstraction that can mean aything in this context
+viz. Operating System, Porgramming System etc) uses to execute a
+procedure. For example, we might have written a simple one-line
+procedure but in order to perform that action the System may have
+needed to conjure up more than one processes.&lt;/p&gt;
+&lt;h1&gt;In Scheme&lt;/h1&gt;
+&lt;p&gt;The main difference between these two terms were motivated my a
+chapter in the book SICP. Some, of the code here is also borrowed from
+that same book.&lt;/p&gt;</content><category term="CS"></category><category term="Scheme"></category></entry><entry><title>The Infinity - How maths can blow your mind!!</title><link href="https://signalshore.github.io/blog/The-Infinity.html" rel="alternate"></link><published>2018-07-03T00:00:00+05:30</published><updated>2018-07-03T00:00:00+05:30</updated><author><name>Sohom</name></author><id>tag:signalshore.github.io,2018-07-03:/blog/The-Infinity.html</id><summary type="html">&lt;p&gt;I am writing this post because I am fascinated by the idea of infinity
 and I think it is something that we do not talk enough about.&lt;/p&gt;
 &lt;p&gt;Moreover off late I am reading about Theoretical Computer Science and
 I find encountering this concept again and again. I am just beginning …&lt;/p&gt;</summary><content type="html">&lt;p&gt;I am writing this post because I am fascinated by the idea of infinity
