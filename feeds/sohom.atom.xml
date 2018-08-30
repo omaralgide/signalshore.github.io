@@ -1,5 +1,260 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>SignalShore - Sohom</title><link href="https://signalshore.github.io/" rel="alternate"></link><link href="https://signalshore.github.io/feeds/sohom.atom.xml" rel="self"></link><id>https://signalshore.github.io/</id><updated>2018-08-06T00:00:00+05:30</updated><entry><title>Moving from Bangalore to Mumbai</title><link href="https://signalshore.github.io/blog/Bangalore-To-Mumbai.html" rel="alternate"></link><published>2018-08-06T00:00:00+05:30</published><updated>2018-08-06T00:00:00+05:30</updated><author><name>Sohom</name></author><id>tag:signalshore.github.io,2018-08-06:/blog/Bangalore-To-Mumbai.html</id><summary type="html">&lt;p&gt;So things got really interesting in the previous month. &lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>SignalShore - Sohom</title><link href="https://signalshore.github.io/" rel="alternate"></link><link href="https://signalshore.github.io/feeds/sohom.atom.xml" rel="self"></link><id>https://signalshore.github.io/</id><updated>2018-08-27T00:00:00+05:30</updated><entry><title>Turing Machine and Halting Problem</title><link href="https://signalshore.github.io/blog/Turing-Machine-and-Halting-Problem.html" rel="alternate"></link><published>2018-08-27T00:00:00+05:30</published><updated>2018-08-27T00:00:00+05:30</updated><author><name>Sohom</name></author><id>tag:signalshore.github.io,2018-08-27:/blog/Turing-Machine-and-Halting-Problem.html</id><summary type="html">&lt;p&gt;In a &lt;a href="https://signalshore.github.io/blog/Lambda-Calculus-Part-2.html"&gt;previous
+post&lt;/a&gt;
+I talked briefly about Alan Turing's model of computation, called the
+Turing Machine.&lt;/p&gt;
+&lt;p&gt;Today we will look into this in more detail and discuss an interesting
+problem called the Halting problem.&lt;/p&gt;
+&lt;h2&gt;Context&lt;/h2&gt;
+&lt;p&gt;Alan Turing was interested in what it meant to &lt;em&gt;compute&lt;/em&gt; something. 
+To fully grasp …&lt;/p&gt;</summary><content type="html">&lt;p&gt;In a &lt;a href="https://signalshore.github.io/blog/Lambda-Calculus-Part-2.html"&gt;previous
+post&lt;/a&gt;
+I talked briefly about Alan Turing's model of computation, called the
+Turing Machine.&lt;/p&gt;
+&lt;p&gt;Today we will look into this in more detail and discuss an interesting
+problem called the Halting problem.&lt;/p&gt;
+&lt;h2&gt;Context&lt;/h2&gt;
+&lt;p&gt;Alan Turing was interested in what it meant to &lt;em&gt;compute&lt;/em&gt; something. 
+To fully grasp the severity of this problem we need to step back in time. &lt;/p&gt;
+&lt;p&gt;This is the 1930s that we are talking about, there were no &lt;em&gt;proper&lt;/em&gt;
+computers yet. Computers and the whole computer science field was not
+yet born. So in this context a computer was a &lt;em&gt;person&lt;/em&gt; who could
+compute.  Compute in this context meant to perform arithmatic
+operations. There were mechanical
+&lt;a href="https://en.wikipedia.org/wiki/Mechanical_calculator"&gt;calculators&lt;/a&gt; that
+existed back then but again. they all required an operator.&lt;/p&gt;
+&lt;p&gt;So ultimately it was the operator who was responsible for making
+deisions about what to do with the numbers. There was not automated
+reasoning that any machine could follow.&lt;/p&gt;
+&lt;p&gt;What Alan Turing was interested in; was to understand the meaning of
+what it means for a task to be computable. This is one of the core
+areas in Philosophy of Computer Science. However to answer this
+question he needed a a formal definition of computation itself (which
+did not exist at that time). &lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;NOTE :&lt;/strong&gt; &lt;em&gt;As a mental exercise before doing anything else just sit back and
+think about this yourself. We use computers daily but at its very
+core, what does computation mean ?&lt;/em&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;So in order to have a formal definition of computation we needed a
+model for computation. This is what Alan Turing came up with and this
+is what we now call the Turing Machine.&lt;/p&gt;
+&lt;h2&gt;The Idea&lt;/h2&gt;
+&lt;p&gt;Picture a typewriter.  The Turing Machine is heavily inspired by this
+system (typewrite + operator). In the book "Alan Turing: The Enigma"
+the writer Andrew Hodges tells us that Alan was fscinated by
+typewriters. We can see this inspiring his work.&lt;/p&gt;
+&lt;p&gt;What does a typewriter have ? A typewriter has a paper for printing, a
+system that outputs charaters on said paper, a mechanism for input
+that tells the typewriter what to print.  Additionally the typewriter
+system also has the user whose job is to tell the typewrite what to do
+and it keeps track of what the typewriter has already done.&lt;/p&gt;
+&lt;p&gt;Now, the Turing Machine is a hypothetical machine (or more precisely a
+mathematical model); it does not exist in real life. It is a state
+machine which means that the machine has a finite number of states in
+which it can be. It can read information/instructions from a tape and
+based on that it moves from one state to another. The number of states
+is finite. It can also write data on the tape.&lt;/p&gt;
+&lt;p&gt;A Turing Machine has 4 main parts:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;The tape&lt;/li&gt;
+&lt;li&gt;The head&lt;/li&gt;
+&lt;li&gt;The state&lt;/li&gt;
+&lt;li&gt;The transition table&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;The &lt;strong&gt;tape&lt;/strong&gt; is the memory of the machine. The tape is divided into blocks
+of the same width. The machine can read symbols from this tape and can
+write symbols to this tape. At a given time there is only one symbol
+in the machine. This symbol is referred to as the /scanned/
+symbol. The machine can be supplied with an infinitely long tape.&lt;/p&gt;
+&lt;p&gt;The &lt;strong&gt;head&lt;/strong&gt; is a contraption that can read symbols from the tape and can
+write symbols to the tape as well. The head can also move the tape to
+the left or right but by only one block at a time.&lt;/p&gt;
+&lt;p&gt;The &lt;strong&gt;state&lt;/strong&gt; of the Turing Machine. This state is a intriguing
+concept. This /state/ is used to replace the /state of mind/ of the
+typewriter operator (or any person performing any computation for that
+matter). At any time the Turing Machine can be one of many finite
+states.&lt;/p&gt;
+&lt;p&gt;The &lt;strong&gt;transition table&lt;/strong&gt; is a set of finite rules that given the current
+state the machine is currently and the scanned symbol tells the Turing
+Machine to write a symbol into the tape, then move the tape left or
+right and finally to assume a new state (or stay in the same one).&lt;/p&gt;
+&lt;p&gt;Now the Turing Machine is a model of computation, thus it must be
+able to do some computation; right? So how does it do that. &lt;/p&gt;
+&lt;h2&gt;Problems for a Turing Machine.&lt;/h2&gt;
+&lt;p&gt;Problems in Automata Theory are generally of the form that involves
+some "computer" determining if some string belongs to a set of strings
+or not, based on some rules. This set of strings is called that follow
+a general rule for membership is called a Language and the "computer"
+involved is called an automaton which is nothig but a model of
+computation. We choose to represent various computational problems as
+languages because we already have etablished a terminology for
+detaling with languges.&lt;/p&gt;
+&lt;p&gt;To perform some computation in a Turing Machine we write a program
+for the machine. This program is basically a set of transition rules.&lt;/p&gt;
+&lt;p&gt;Given any string as input the Turing Machine can do one of three
+things. It can stop and &lt;strong&gt;accept&lt;/strong&gt; the string or it can &lt;strong&gt;reject&lt;/strong&gt; the
+string or it can &lt;strong&gt;loop&lt;/strong&gt; indefinitely over the input.&lt;/p&gt;
+&lt;p&gt;When the TM is in either of these states after processing a string we
+say that the TM has halted (as in stopped running on the output). On
+the other hand if the TM does not halt and instead keeps on looping
+indefinitely then it means that the TM will never stop working or
+never halt. When a TM has halted it indicates that the TM has decided
+the string (either accept or reject) on the other hand when it does
+not halt then the string (or rather the problem) is said to be
+undecideable.&lt;/p&gt;
+&lt;p&gt;All this can get quite intense, so here is an intuitive definition of
+computation by a Turing
+Machine. The
+&lt;a href="https://en.wikipedia.org/wiki/Church%E2%80%93Turing_thesis"&gt;Church-Turing thesis&lt;/a&gt; showed
+that a Turing Machine algorithm captures &lt;strong&gt;all&lt;/strong&gt; algorithms. This
+means that if for a given problem we can design a Turing Machine
+algorithms then that problem is actually solveable. As we will soon
+see that there are certain problems that are so complex that there
+exists no algorithm that can solve them. In-fact while describing
+Turing Machine algorithms we do not need to go into the implementaion
+level details of how the head and the tapes move; instead we can just
+use English prose to describe an algorithm. The only requirement is
+that an algorithm to stop in a finite number of steps (this is quite
+literally the definition of an algorithm).&lt;/p&gt;
+&lt;h2&gt;Universal Turing Machine&lt;/h2&gt;
+&lt;p&gt;A Turing Machine is generally programmed to perform only a single type
+of computation. However there is a class of Turing Machines called the
+Universal Turing Machine which can perform any sort of computation. In
+fact this property of this Turing Machine is what makes a Turing
+Machine such a powerful model for computation. &lt;/p&gt;
+&lt;p&gt;The Universal Turing Machine can simulate any arbitrary turing machine
+on any arbitrary string. It does this by reading the description of
+the turing machine and the string input from its own tape and then
+processing them.&lt;/p&gt;
+&lt;p&gt;This makes the Turing Machine capable of answering questions about the
+behaviour of other Turing machines. This model of computation is a
+very accurate model of modern computers where computers have access to
+a random access memory. This is the same as the tape in a Turing
+Machine.&lt;/p&gt;
+&lt;p&gt;Thus the probalems these Turing Machines can tackle are generally of
+the form where we test the behaviour of some arbitrary turing machine
+on some arbitrary input.&lt;/p&gt;
+&lt;h2&gt;The Halting Problem&lt;/h2&gt;
+&lt;p&gt;The Hatling Problem is a decision problem of determining wheather any
+arbitrary Turing Machine will halt on an arbitrary string input or
+not. &lt;/p&gt;
+&lt;p&gt;In other words lets say that we have a Language &lt;span class="math"&gt;\(H_{Lang}\)&lt;/span&gt; which is
+made up of all string encodings of the form &lt;span class="math"&gt;\(&amp;lt;B,w&amp;gt;\)&lt;/span&gt; where &lt;span class="math"&gt;\(B\)&lt;/span&gt; is a
+Turing Machie and &lt;span class="math"&gt;\(w\)&lt;/span&gt; is a string and &lt;span class="math"&gt;\(B\)&lt;/span&gt; halts on &lt;span class="math"&gt;\(w\)&lt;/span&gt;. We need to
+show that &lt;span class="math"&gt;\(H_{Lang}\)&lt;/span&gt; is undecideable. Which means that there isn't a
+single imagineable Turing Machine that can decide &lt;span class="math"&gt;\(H_{Lang}\)&lt;/span&gt;.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Which means that no one can ever design a Turing Machine that will
+be able to take an arbitrary string &lt;span class="math"&gt;\(w\)&lt;/span&gt; and an arbitrary turing
+machine &lt;span class="math"&gt;\(B\)&lt;/span&gt; and tell wheather &lt;span class="math"&gt;\(B\)&lt;/span&gt; will halt on &lt;span class="math"&gt;\(w\)&lt;/span&gt; or not. &lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Now, this might seem like a fairly un-important detail but this has
+some far-reaching implications as we will soon see. But before that we
+will prove the above statement. This is a fun proof that illustrates
+how to think about these problems in general.&lt;/p&gt;
+&lt;h3&gt;Proof&lt;/h3&gt;
+&lt;p&gt;Let us assume that such a machine does exist and let us call it
+&lt;span class="math"&gt;\(H_{TM}\)&lt;/span&gt;.&lt;/p&gt;
+&lt;p&gt;Construction of &lt;span class="math"&gt;\(H_{TM}\)&lt;/span&gt;:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Input :&lt;/strong&gt; String &lt;span class="math"&gt;\(&amp;lt;B,w&amp;gt;\)&lt;/span&gt;, where &lt;span class="math"&gt;\(B\)&lt;/span&gt; is a TM and &lt;span class="math"&gt;\(w\)&lt;/span&gt; is a string.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Run :&lt;/strong&gt; Simulates &lt;span class="math"&gt;\(w\)&lt;/span&gt; on &lt;span class="math"&gt;\(B\)&lt;/span&gt;.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Accepts :&lt;/strong&gt; &lt;span class="math"&gt;\(w\)&lt;/span&gt; if &lt;span class="math"&gt;\(B\)&lt;/span&gt; halts on &lt;span class="math"&gt;\(w\)&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Rejects :&lt;/strong&gt; &lt;span class="math"&gt;\(w\)&lt;/span&gt; if &lt;span class="math"&gt;\(B\)&lt;/span&gt; does not halt on &lt;span class="math"&gt;\(w\)&lt;/span&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;em&gt;This&lt;/em&gt; is the decider that we have to prove can not exist.&lt;/p&gt;
+&lt;p&gt;Now, since &lt;span class="math"&gt;\(H_{TM}\)&lt;/span&gt; already exists we can use this machine to
+construct another Turing Machine &lt;span class="math"&gt;\(D_{TM_H}\)&lt;/span&gt; which has &lt;span class="math"&gt;\(H_{TM}\)&lt;/span&gt; as a
+subroutine (hence the sub-subscript notation).&lt;/p&gt;
+&lt;p&gt;Construction of &lt;span class="math"&gt;\(D_{TM_H}\)&lt;/span&gt;:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Input :&lt;/strong&gt; String &lt;span class="math"&gt;\(&amp;lt;M&amp;gt;\)&lt;/span&gt;, where &lt;span class="math"&gt;\(M\)&lt;/span&gt; is a turing machine&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Runs :&lt;/strong&gt; Simulates &lt;span class="math"&gt;\(&amp;lt;M, &amp;lt;M&amp;gt;&amp;gt;\)&lt;/span&gt; on &lt;span class="math"&gt;\(H_{TM}\)&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Accepts :&lt;/strong&gt; &lt;span class="math"&gt;\(&amp;lt;M&amp;gt;\)&lt;/span&gt; if &lt;span class="math"&gt;\(H_{TM}\)&lt;/span&gt; rejects &lt;span class="math"&gt;\(&amp;lt;M, &amp;lt;M&amp;gt;&amp;gt;\)&lt;/span&gt;, i.e. if &lt;span class="math"&gt;\(M\)&lt;/span&gt; rejects &lt;span class="math"&gt;\(&amp;lt;M&amp;gt;\)&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Rejects :&lt;/strong&gt; &lt;span class="math"&gt;\(&amp;lt;M&amp;gt;\)&lt;/span&gt; if &lt;span class="math"&gt;\(H_{TM}\)&lt;/span&gt; accepts &lt;span class="math"&gt;\(&amp;lt;M, &amp;lt;M&amp;gt;&amp;gt;\)&lt;/span&gt;, i.e. if &lt;span class="math"&gt;\(M\)&lt;/span&gt; accepts &lt;span class="math"&gt;\(&amp;lt;M&amp;lt;\)&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;Now, what happens if we run &lt;span class="math"&gt;\(D_{TM_H}\)&lt;/span&gt; on &lt;span class="math"&gt;\(&amp;lt;D_{TM_H}&amp;gt;\)&lt;/span&gt; ?&lt;/strong&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;By the above Accept and Reject conditions, &lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;If &lt;span class="math"&gt;\(D_{TM_H}\)&lt;/span&gt; &lt;strong&gt;accepts&lt;/strong&gt; &lt;span class="math"&gt;\(&amp;lt;D_{TM_H}&amp;gt;\)&lt;/span&gt;, then it means that &lt;span class="math"&gt;\(H_{TM}\)&lt;/span&gt;
+  rejected &lt;span class="math"&gt;\(&amp;lt;D_{TM_H}, &amp;lt;D_{TM_H} &amp;gt;&amp;gt;\)&lt;/span&gt; which means that &lt;span class="math"&gt;\(D_{TM_H}\)&lt;/span&gt;
+  &lt;strong&gt;rejects&lt;/strong&gt; &lt;span class="math"&gt;\(&amp;lt;D_{TM_H}&amp;gt;\)&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;If &lt;span class="math"&gt;\(D_{TM_H}\)&lt;/span&gt; &lt;strong&gt;rejects&lt;/strong&gt; &lt;span class="math"&gt;\(&amp;lt;D_{TM_H}&amp;gt;\)&lt;/span&gt;, then it means that &lt;span class="math"&gt;\(H_{TM}\)&lt;/span&gt;
+  accepted &lt;span class="math"&gt;\(&amp;lt;D_{TM_H}, &amp;lt;D_{TM_H} &amp;gt;&amp;gt;\)&lt;/span&gt; which means that &lt;span class="math"&gt;\(D_{TM_H}\)&lt;/span&gt;
+  &lt;strong&gt;accepted&lt;/strong&gt; &lt;span class="math"&gt;\(&amp;lt;D_{TM_H}&amp;gt;\)&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;This is a contradiction because it implies that &lt;span class="math"&gt;\(D_{TM_H}\)&lt;/span&gt; accepts
+itself if it rejects itself.&lt;/p&gt;
+&lt;p&gt;Hence our initial assumption about the existence of &lt;span class="math"&gt;\(H_{TM}\)&lt;/span&gt; must be
+wrong. Hence &lt;span class="math"&gt;\(H_{TM}\)&lt;/span&gt; can not exist.&lt;/p&gt;
+&lt;h6&gt;There is another proof for this that uses the Cantor's diagonalisation argument&lt;/h6&gt;
+&lt;h3&gt;Implications&lt;/h3&gt;
+&lt;p&gt;This means that&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;There does not exist a single algorithm that can us if another
+algorithm will halt or not&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Static analysers try and do solve some of these limitations but yes,
+they are not 100% accurate, because they are mathematically guranteed
+to not be 100% accurate.&lt;/p&gt;
+&lt;script type="text/javascript"&gt;if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
+    var align = "center",
+        indent = "0em",
+        linebreak = "false";
+
+    if (false) {
+        align = (screen.width &lt; 768) ? "left" : align;
+        indent = (screen.width &lt; 768) ? "0em" : indent;
+        linebreak = (screen.width &lt; 768) ? 'true' : linebreak;
+    }
+
+    var mathjaxscript = document.createElement('script');
+    mathjaxscript.id = 'mathjaxscript_pelican_#%@#$@#';
+    mathjaxscript.type = 'text/javascript';
+    mathjaxscript.src = 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML';
+    mathjaxscript[(window.opera ? "innerHTML" : "text")] =
+        "MathJax.Hub.Config({" +
+        "    config: ['MMLorHTML.js']," +
+        "    TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' } }," +
+        "    jax: ['input/TeX','input/MathML','output/HTML-CSS']," +
+        "    extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']," +
+        "    displayAlign: '"+ align +"'," +
+        "    displayIndent: '"+ indent +"'," +
+        "    showMathMenu: true," +
+        "    messageStyle: 'normal'," +
+        "    tex2jax: { " +
+        "        inlineMath: [ ['\\\\(','\\\\)'] ], " +
+        "        displayMath: [ ['$$','$$'] ]," +
+        "        processEscapes: true," +
+        "        preview: 'TeX'," +
+        "    }, " +
+        "    'HTML-CSS': { " +
+        "        styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: 'inherit ! important'} }," +
+        "        linebreaks: { automatic: "+ linebreak +", width: '90% container' }," +
+        "    }, " +
+        "}); " +
+        "if ('default' !== 'default') {" +
+            "MathJax.Hub.Register.StartupHook('HTML-CSS Jax Ready',function () {" +
+                "var VARIANT = MathJax.OutputJax['HTML-CSS'].FONTDATA.VARIANT;" +
+                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
+                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
+                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
+                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
+            "});" +
+            "MathJax.Hub.Register.StartupHook('SVG Jax Ready',function () {" +
+                "var VARIANT = MathJax.OutputJax.SVG.FONTDATA.VARIANT;" +
+                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
+                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
+                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
+                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
+            "});" +
+        "}";
+    (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
+}
+&lt;/script&gt;</content><category term="CS"></category></entry><entry><title>Moving from Bangalore to Mumbai</title><link href="https://signalshore.github.io/blog/Bangalore-To-Mumbai.html" rel="alternate"></link><published>2018-08-06T00:00:00+05:30</published><updated>2018-08-06T00:00:00+05:30</updated><author><name>Sohom</name></author><id>tag:signalshore.github.io,2018-08-06:/blog/Bangalore-To-Mumbai.html</id><summary type="html">&lt;p&gt;So things got really interesting in the previous month. &lt;/p&gt;
 &lt;p&gt;After my degree course got over, I was supposed to join Deloitte as a
 campus recruit. Before the joining I attended the training program for
 campus recruits for about two weeks.&lt;/p&gt;

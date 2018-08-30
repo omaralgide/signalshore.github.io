@@ -1,5 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0"><channel><title>SignalShore - Sohom</title><link>https://signalshore.github.io/</link><description></description><lastBuildDate>Mon, 06 Aug 2018 00:00:00 +0530</lastBuildDate><item><title>Moving from Bangalore to Mumbai</title><link>https://signalshore.github.io/blog/Bangalore-To-Mumbai.html</link><description>&lt;p&gt;So things got really interesting in the previous month. &lt;/p&gt;
+<rss version="2.0"><channel><title>SignalShore - Sohom</title><link>https://signalshore.github.io/</link><description></description><lastBuildDate>Mon, 27 Aug 2018 00:00:00 +0530</lastBuildDate><item><title>Turing Machine and Halting Problem</title><link>https://signalshore.github.io/blog/Turing-Machine-and-Halting-Problem.html</link><description>&lt;p&gt;In a &lt;a href="https://signalshore.github.io/blog/Lambda-Calculus-Part-2.html"&gt;previous
+post&lt;/a&gt;
+I talked briefly about Alan Turing's model of computation, called the
+Turing Machine.&lt;/p&gt;
+&lt;p&gt;Today we will look into this in more detail and discuss an interesting
+problem called the Halting problem.&lt;/p&gt;
+&lt;h2&gt;Context&lt;/h2&gt;
+&lt;p&gt;Alan Turing was interested in what it meant to &lt;em&gt;compute&lt;/em&gt; something. 
+To fully grasp …&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Sohom</dc:creator><pubDate>Mon, 27 Aug 2018 00:00:00 +0530</pubDate><guid isPermaLink="false">tag:signalshore.github.io,2018-08-27:/blog/Turing-Machine-and-Halting-Problem.html</guid><category>CS</category></item><item><title>Moving from Bangalore to Mumbai</title><link>https://signalshore.github.io/blog/Bangalore-To-Mumbai.html</link><description>&lt;p&gt;So things got really interesting in the previous month. &lt;/p&gt;
 &lt;p&gt;After my degree course got over, I was supposed to join Deloitte as a
 campus recruit. Before the joining I attended the training program for
 campus recruits for about two weeks.&lt;/p&gt;
