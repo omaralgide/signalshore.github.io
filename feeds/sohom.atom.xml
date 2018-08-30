@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>SignalShore - Sohom</title><link href="https://signalshore.github.io/" rel="alternate"></link><link href="https://signalshore.github.io/feeds/sohom.atom.xml" rel="self"></link><id>https://signalshore.github.io/</id><updated>2018-08-27T00:00:00+05:30</updated><entry><title>Turing Machine and Halting Problem</title><link href="https://signalshore.github.io/blog/Turing-Machine-and-Halting-Problem.html" rel="alternate"></link><published>2018-08-27T00:00:00+05:30</published><updated>2018-08-27T00:00:00+05:30</updated><author><name>Sohom</name></author><id>tag:signalshore.github.io,2018-08-27:/blog/Turing-Machine-and-Halting-Problem.html</id><summary type="html">&lt;p&gt;In a &lt;a href="https://signalshore.github.io/blog/Lambda-Calculus-Part-2.html"&gt;previous
+<feed xmlns="http://www.w3.org/2005/Atom"><title>SignalShore - Sohom</title><link href="https://signalshore.github.io/" rel="alternate"></link><link href="https://signalshore.github.io/feeds/sohom.atom.xml" rel="self"></link><id>https://signalshore.github.io/</id><updated>2018-08-30T00:00:00+05:30</updated><entry><title>Turing Machine and Halting Problem</title><link href="https://signalshore.github.io/blog/Turing-Machine-and-Halting-Problem.html" rel="alternate"></link><published>2018-08-30T00:00:00+05:30</published><updated>2018-08-30T00:00:00+05:30</updated><author><name>Sohom</name></author><id>tag:signalshore.github.io,2018-08-30:/blog/Turing-Machine-and-Halting-Problem.html</id><summary type="html">&lt;p&gt;In a &lt;a href="https://signalshore.github.io/blog/Lambda-Calculus-Part-2.html"&gt;previous
 post&lt;/a&gt;
 I talked briefly about Alan Turing's model of computation, called the
 Turing Machine.&lt;/p&gt;
@@ -18,13 +18,15 @@ problem called the Halting problem.&lt;/p&gt;
 To fully grasp the severity of this problem we need to step back in time. &lt;/p&gt;
 &lt;p&gt;This is the 1930s that we are talking about, there were no &lt;em&gt;proper&lt;/em&gt;
 computers yet. Computers and the whole computer science field was not
-yet born. So in this context a computer was a &lt;em&gt;person&lt;/em&gt; who could
-compute.  Compute in this context meant to perform arithmatic
-operations. There were mechanical
-&lt;a href="https://en.wikipedia.org/wiki/Mechanical_calculator"&gt;calculators&lt;/a&gt; that
-existed back then but again. they all required an operator.&lt;/p&gt;
+yet born. So in this context a computer something that could perform
+arithmetic operations. Humans who did this were
+called &lt;a href="https://en.wikipedia.org/wiki/Human_computer"&gt;human computers&lt;/a&gt;
+There were
+mechanical
+&lt;a href="https://en.wikipedia.org/wiki/Mechanical_calculator"&gt;calculators&lt;/a&gt;
+that existed back then but again. they all required a human operator.&lt;/p&gt;
 &lt;p&gt;So ultimately it was the operator who was responsible for making
-deisions about what to do with the numbers. There was not automated
+decisions about what to do with the numbers. There was not automated
 reasoning that any machine could follow.&lt;/p&gt;
 &lt;p&gt;What Alan Turing was interested in; was to understand the meaning of
 what it means for a task to be computable. This is one of the core
@@ -41,11 +43,11 @@ model for computation. This is what Alan Turing came up with and this
 is what we now call the Turing Machine.&lt;/p&gt;
 &lt;h2&gt;The Idea&lt;/h2&gt;
 &lt;p&gt;Picture a typewriter.  The Turing Machine is heavily inspired by this
-system (typewrite + operator). In the book "Alan Turing: The Enigma"
-the writer Andrew Hodges tells us that Alan was fscinated by
+system (typewriter + operator). In the book "Alan Turing: The Enigma"
+the writer Andrew Hodges tells us that Alan was fascinated by
 typewriters. We can see this inspiring his work.&lt;/p&gt;
 &lt;p&gt;What does a typewriter have ? A typewriter has a paper for printing, a
-system that outputs charaters on said paper, a mechanism for input
+system that outputs characters on said paper, a mechanism for input
 that tells the typewriter what to print.  Additionally the typewriter
 system also has the user whose job is to tell the typewrite what to do
 and it keeps track of what the typewriter has already done.&lt;/p&gt;
@@ -62,16 +64,17 @@ is finite. It can also write data on the tape.&lt;/p&gt;
 &lt;li&gt;The state&lt;/li&gt;
 &lt;li&gt;The transition table&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;The &lt;strong&gt;tape&lt;/strong&gt; is the memory of the machine. The tape is divided into blocks
-of the same width. The machine can read symbols from this tape and can
-write symbols to this tape. At a given time there is only one symbol
-in the machine. This symbol is referred to as the /scanned/
-symbol. The machine can be supplied with an infinitely long tape.&lt;/p&gt;
+&lt;p&gt;The &lt;strong&gt;tape&lt;/strong&gt; is the memory of the machine. The tape is divided into
+blocks of the same width and only one symbol is present in one
+block. The machine can read symbols from this tape and can write
+symbols to this tape. At a given time there is only one symbol in the
+machine. This symbol is referred to as the &lt;em&gt;scanned&lt;/em&gt; symbol. The
+machine can be supplied with an infinitely long tape.&lt;/p&gt;
 &lt;p&gt;The &lt;strong&gt;head&lt;/strong&gt; is a contraption that can read symbols from the tape and can
 write symbols to the tape as well. The head can also move the tape to
 the left or right but by only one block at a time.&lt;/p&gt;
 &lt;p&gt;The &lt;strong&gt;state&lt;/strong&gt; of the Turing Machine. This state is a intriguing
-concept. This /state/ is used to replace the /state of mind/ of the
+concept. This &lt;em&gt;state&lt;/em&gt; is used to replace the &lt;em&gt;state of mind&lt;/em&gt; of the
 typewriter operator (or any person performing any computation for that
 matter). At any time the Turing Machine can be one of many finite
 states.&lt;/p&gt;
@@ -86,33 +89,33 @@ able to do some computation; right? So how does it do that. &lt;/p&gt;
 some "computer" determining if some string belongs to a set of strings
 or not, based on some rules. This set of strings is called that follow
 a general rule for membership is called a Language and the "computer"
-involved is called an automaton which is nothig but a model of
+involved is called an automaton which is nothing but a model of
 computation. We choose to represent various computational problems as
-languages because we already have etablished a terminology for
-detaling with languges.&lt;/p&gt;
+languages because we already have established a terminology for
+dealing with languages.&lt;/p&gt;
 &lt;p&gt;To perform some computation in a Turing Machine we write a program
 for the machine. This program is basically a set of transition rules.&lt;/p&gt;
 &lt;p&gt;Given any string as input the Turing Machine can do one of three
 things. It can stop and &lt;strong&gt;accept&lt;/strong&gt; the string or it can &lt;strong&gt;reject&lt;/strong&gt; the
 string or it can &lt;strong&gt;loop&lt;/strong&gt; indefinitely over the input.&lt;/p&gt;
-&lt;p&gt;When the TM is in either of these states after processing a string we
-say that the TM has halted (as in stopped running on the output). On
-the other hand if the TM does not halt and instead keeps on looping
-indefinitely then it means that the TM will never stop working or
-never halt. When a TM has halted it indicates that the TM has decided
-the string (either accept or reject) on the other hand when it does
-not halt then the string (or rather the problem) is said to be
-undecideable.&lt;/p&gt;
+&lt;p&gt;When the TM is in either the accept or the reject state after
+processing a string then we say that the TM has halted (as in stopped
+running on the output). On the other hand if the TM does not halt and
+instead keeps on looping indefinitely then it means that the TM will
+never stop working or never halt. When a TM has halted it indicates
+that the TM has decided the string (either accept or reject) on the
+other hand when it does not halt then the string (or rather the
+problem) is said to be undecidable.&lt;/p&gt;
 &lt;p&gt;All this can get quite intense, so here is an intuitive definition of
 computation by a Turing
 Machine. The
 &lt;a href="https://en.wikipedia.org/wiki/Church%E2%80%93Turing_thesis"&gt;Church-Turing thesis&lt;/a&gt; showed
 that a Turing Machine algorithm captures &lt;strong&gt;all&lt;/strong&gt; algorithms. This
 means that if for a given problem we can design a Turing Machine
-algorithms then that problem is actually solveable. As we will soon
+algorithms then that problem is actually solvable. As we will soon
 see that there are certain problems that are so complex that there
 exists no algorithm that can solve them. In-fact while describing
-Turing Machine algorithms we do not need to go into the implementaion
+Turing Machine algorithms we do not need to go into the implementation
 level details of how the head and the tapes move; instead we can just
 use English prose to describe an algorithm. The only requirement is
 that an algorithm to stop in a finite number of steps (this is quite
@@ -123,31 +126,31 @@ of computation. However there is a class of Turing Machines called the
 Universal Turing Machine which can perform any sort of computation. In
 fact this property of this Turing Machine is what makes a Turing
 Machine such a powerful model for computation. &lt;/p&gt;
-&lt;p&gt;The Universal Turing Machine can simulate any arbitrary turing machine
+&lt;p&gt;The Universal Turing Machine can simulate any arbitrary Turing machine
 on any arbitrary string. It does this by reading the description of
-the turing machine and the string input from its own tape and then
+the Turing machine and the string input from its own tape and then
 processing them.&lt;/p&gt;
 &lt;p&gt;This makes the Turing Machine capable of answering questions about the
-behaviour of other Turing machines. This model of computation is a
+behavior of other Turing machines. This model of computation is a
 very accurate model of modern computers where computers have access to
 a random access memory. This is the same as the tape in a Turing
 Machine.&lt;/p&gt;
-&lt;p&gt;Thus the probalems these Turing Machines can tackle are generally of
-the form where we test the behaviour of some arbitrary turing machine
+&lt;p&gt;Thus the problems these Turing Machines can tackle are generally of
+the form where we test the behavior of some arbitrary Turing machine
 on some arbitrary input.&lt;/p&gt;
 &lt;h2&gt;The Halting Problem&lt;/h2&gt;
-&lt;p&gt;The Hatling Problem is a decision problem of determining wheather any
+&lt;p&gt;The Halting Problem is a decision problem of determining whether any
 arbitrary Turing Machine will halt on an arbitrary string input or
 not. &lt;/p&gt;
 &lt;p&gt;In other words lets say that we have a Language &lt;span class="math"&gt;\(H_{Lang}\)&lt;/span&gt; which is
-made up of all string encodings of the form &lt;span class="math"&gt;\(&amp;lt;B,w&amp;gt;\)&lt;/span&gt; where &lt;span class="math"&gt;\(B\)&lt;/span&gt; is a
-Turing Machie and &lt;span class="math"&gt;\(w\)&lt;/span&gt; is a string and &lt;span class="math"&gt;\(B\)&lt;/span&gt; halts on &lt;span class="math"&gt;\(w\)&lt;/span&gt;. We need to
-show that &lt;span class="math"&gt;\(H_{Lang}\)&lt;/span&gt; is undecideable. Which means that there isn't a
-single imagineable Turing Machine that can decide &lt;span class="math"&gt;\(H_{Lang}\)&lt;/span&gt;.&lt;/p&gt;
+made up of all string encoding of the form &lt;span class="math"&gt;\(&amp;lt;B,w&amp;gt;\)&lt;/span&gt; where &lt;span class="math"&gt;\(B\)&lt;/span&gt; is a
+Turing Machine and &lt;span class="math"&gt;\(w\)&lt;/span&gt; is a string and &lt;span class="math"&gt;\(B\)&lt;/span&gt; halts on &lt;span class="math"&gt;\(w\)&lt;/span&gt;. We need to
+show that &lt;span class="math"&gt;\(H_{Lang}\)&lt;/span&gt; is undecidable. Which means that there isn't a
+single imaginable Turing Machine that can decide &lt;span class="math"&gt;\(H_{Lang}\)&lt;/span&gt;.&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;Which means that no one can ever design a Turing Machine that will
-be able to take an arbitrary string &lt;span class="math"&gt;\(w\)&lt;/span&gt; and an arbitrary turing
-machine &lt;span class="math"&gt;\(B\)&lt;/span&gt; and tell wheather &lt;span class="math"&gt;\(B\)&lt;/span&gt; will halt on &lt;span class="math"&gt;\(w\)&lt;/span&gt; or not. &lt;/p&gt;
+be able to take an arbitrary string &lt;span class="math"&gt;\(w\)&lt;/span&gt; and an arbitrary Turing
+machine &lt;span class="math"&gt;\(B\)&lt;/span&gt; and tell whether &lt;span class="math"&gt;\(B\)&lt;/span&gt; will halt on &lt;span class="math"&gt;\(w\)&lt;/span&gt; or not. &lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;Now, this might seem like a fairly un-important detail but this has
 some far-reaching implications as we will soon see. But before that we
@@ -169,7 +172,7 @@ construct another Turing Machine &lt;span class="math"&gt;\(D_{TM_H}\)&lt;/span&
 subroutine (hence the sub-subscript notation).&lt;/p&gt;
 &lt;p&gt;Construction of &lt;span class="math"&gt;\(D_{TM_H}\)&lt;/span&gt;:&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;Input :&lt;/strong&gt; String &lt;span class="math"&gt;\(&amp;lt;M&amp;gt;\)&lt;/span&gt;, where &lt;span class="math"&gt;\(M\)&lt;/span&gt; is a turing machine&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Input :&lt;/strong&gt; String &lt;span class="math"&gt;\(&amp;lt;M&amp;gt;\)&lt;/span&gt;, where &lt;span class="math"&gt;\(M\)&lt;/span&gt; is a Turing machine&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;Runs :&lt;/strong&gt; Simulates &lt;span class="math"&gt;\(&amp;lt;M, &amp;lt;M&amp;gt;&amp;gt;\)&lt;/span&gt; on &lt;span class="math"&gt;\(H_{TM}\)&lt;/span&gt;&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;Accepts :&lt;/strong&gt; &lt;span class="math"&gt;\(&amp;lt;M&amp;gt;\)&lt;/span&gt; if &lt;span class="math"&gt;\(H_{TM}\)&lt;/span&gt; rejects &lt;span class="math"&gt;\(&amp;lt;M, &amp;lt;M&amp;gt;&amp;gt;\)&lt;/span&gt;, i.e. if &lt;span class="math"&gt;\(M\)&lt;/span&gt; rejects &lt;span class="math"&gt;\(&amp;lt;M&amp;gt;\)&lt;/span&gt;&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;Rejects :&lt;/strong&gt; &lt;span class="math"&gt;\(&amp;lt;M&amp;gt;\)&lt;/span&gt; if &lt;span class="math"&gt;\(H_{TM}\)&lt;/span&gt; accepts &lt;span class="math"&gt;\(&amp;lt;M, &amp;lt;M&amp;gt;&amp;gt;\)&lt;/span&gt;, i.e. if &lt;span class="math"&gt;\(M\)&lt;/span&gt; accepts &lt;span class="math"&gt;\(&amp;lt;M&amp;lt;\)&lt;/span&gt;&lt;/li&gt;
@@ -191,15 +194,18 @@ itself if it rejects itself.&lt;/p&gt;
 &lt;p&gt;Hence our initial assumption about the existence of &lt;span class="math"&gt;\(H_{TM}\)&lt;/span&gt; must be
 wrong. Hence &lt;span class="math"&gt;\(H_{TM}\)&lt;/span&gt; can not exist.&lt;/p&gt;
 &lt;h6&gt;There is another proof for this that uses the Cantor's diagonalisation argument&lt;/h6&gt;
-&lt;h3&gt;Implications&lt;/h3&gt;
+&lt;h3&gt;Conclusion&lt;/h3&gt;
 &lt;p&gt;This means that&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;There does not exist a single algorithm that can us if another
 algorithm will halt or not&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;Static analysers try and do solve some of these limitations but yes,
-they are not 100% accurate, because they are mathematically guranteed
+&lt;p&gt;Static analyzers try and do solve some of these limitations but yes,
+they are not 100% accurate, because they are mathematically guaranteed
 to not be 100% accurate.&lt;/p&gt;
+&lt;p&gt;This post is part of a series of posts that I have planned. In the
+next one we will talk about Godels Incompletelness Theorems and
+Hilberts Problems.&lt;/p&gt;
 &lt;script type="text/javascript"&gt;if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
     var align = "center",
         indent = "0em",
