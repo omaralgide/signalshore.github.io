@@ -1,5 +1,129 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>SignalShore</title><link href="https://signalshore.github.io/" rel="alternate"></link><link href="https://signalshore.github.io/feeds/all-en.atom.xml" rel="self"></link><id>https://signalshore.github.io/</id><updated>2018-08-30T00:00:00+05:30</updated><entry><title>Turing Machine and Halting Problem</title><link href="https://signalshore.github.io/blog/Turing-Machine-and-Halting-Problem.html" rel="alternate"></link><published>2018-08-30T00:00:00+05:30</published><updated>2018-08-30T00:00:00+05:30</updated><author><name>Sohom</name></author><id>tag:signalshore.github.io,2018-08-30:/blog/Turing-Machine-and-Halting-Problem.html</id><summary type="html">&lt;p&gt;In a &lt;a href="https://signalshore.github.io/blog/Lambda-Calculus-Part-2.html"&gt;previous
+<feed xmlns="http://www.w3.org/2005/Atom"><title>SignalShore</title><link href="https://signalshore.github.io/" rel="alternate"></link><link href="https://signalshore.github.io/feeds/all-en.atom.xml" rel="self"></link><id>https://signalshore.github.io/</id><updated>2018-11-07T00:00:00+05:30</updated><entry><title>Undecidability and Incompleteness</title><link href="https://signalshore.github.io/blog/Undecideablity-And-Incompleteness.html" rel="alternate"></link><published>2018-11-07T00:00:00+05:30</published><updated>2018-11-07T00:00:00+05:30</updated><author><name>Sohom</name></author><id>tag:signalshore.github.io,2018-11-07:/blog/Undecideablity-And-Incompleteness.html</id><summary type="html">&lt;p&gt;In the &lt;a href="https://signalshore.github.io/blog/Turing-Machine-and-Halting-Problem.html"&gt;previous post&lt;/a&gt;
+we looked at a Turing Machine and the Halting problem.  A Halting
+problems is type of decision problem for a Turing Machine.&lt;/p&gt;
+&lt;p&gt;Recall that a Turing Machine has three final states:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Accept -&amp;gt; The machine accepts the string&lt;/li&gt;
+&lt;li&gt;Reject -&amp;gt; The machine rejects the string&lt;/li&gt;
+&lt;li&gt;Loop indefinitely -&amp;gt; The …&lt;/li&gt;&lt;/ul&gt;</summary><content type="html">&lt;p&gt;In the &lt;a href="https://signalshore.github.io/blog/Turing-Machine-and-Halting-Problem.html"&gt;previous post&lt;/a&gt;
+we looked at a Turing Machine and the Halting problem.  A Halting
+problems is type of decision problem for a Turing Machine.&lt;/p&gt;
+&lt;p&gt;Recall that a Turing Machine has three final states:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Accept -&amp;gt; The machine accepts the string&lt;/li&gt;
+&lt;li&gt;Reject -&amp;gt; The machine rejects the string&lt;/li&gt;
+&lt;li&gt;Loop indefinitely -&amp;gt; The machine neither accepts nor rejects the string; its still processing it&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Now it is quite evident that in the Accept and Reject states the
+Turing Machine can tell you something definite about the string that
+it is processing. Thus, when a Turing Machine reaches one of these
+states we say that the Turing Machine has &lt;em&gt;decided&lt;/em&gt; the language
+(recall that all TM problems are represented in the form of Languages). &lt;/p&gt;
+&lt;p&gt;On the other hand we have situations where the Turing Machine fails to
+decide a language. In fact we have a whole class of such
+languages. These languages are called undecidable languages.&lt;/p&gt;
+&lt;p&gt;The Halting Problem that we looked at in the last essay is one such problem.&lt;/p&gt;
+&lt;h2&gt;Undecidability and Undecidable Problems&lt;/h2&gt;
+&lt;p&gt;Undecidability is one of those concepts in Theoretical Computer
+Science that fascinates me in ways I can not even begin explain. &lt;/p&gt;
+&lt;p&gt;There are certain types of decision-problems for which there is no
+algorithm that can reliably give a yes-no answer.&lt;/p&gt;
+&lt;p&gt;The implications of this are quite interesting. &lt;/p&gt;
+&lt;p&gt;This means that you can not have a program that tells you whether a
+program will produce an output or not (and consequently keep running
+for-ever). Like how our compilers still can not tell us when we will hit
+an infinite-loop. The only way to find out is to actually run the
+program. This is serious research topic in computer science; designing
+accurate static analyzers.&lt;/p&gt;
+&lt;h2&gt;Hilbert's problems&lt;/h2&gt;
+&lt;p&gt;In 1900 mathematician David Hilbert published a list of 23
+problems. In 1928 he returned to the second question out of these 23
+asking three fundamental questions about mathematics.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Is mathematics complete ?&lt;/li&gt;
+&lt;li&gt;Is mathematics consistent ?&lt;/li&gt;
+&lt;li&gt;Is mathematics decidable ?&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;The main reason for these questions was to establish a set of
+&lt;em&gt;fundamental&lt;/em&gt; axioms about mathematics using which you could prove any
+theorem in mathematics. Now, the idea was that even if all of such
+axioms were not known we could find them out.&lt;/p&gt;
+&lt;p&gt;Three years later in 1931 Kurt Godel published solutions to the first
+two questions, these are known as Godel's incompleteness theorems.&lt;/p&gt;
+&lt;p&gt;The Wikipedia page
+for
+&lt;a href="https://en.wikipedia.org/wiki/G%C3%B6del%27s_incompleteness_theorems"&gt;Godel's incompleteness theorem&lt;/a&gt; states
+that&lt;/p&gt;
+&lt;p&gt;The first incompleteness theorem:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;no consistent system
+of axioms whose theorems can be listed by an effective procedure
+(i.e., an algorithm) is capable of proving all truths about the
+arithmetic of the natural numbers. For any such formal system, there
+will always be statements about the natural numbers that are true, but
+that are unprovable within the system.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;The second incompleteness theorem:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;the system in question cannot demonstrate its own consistency.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
+&lt;p&gt;All this is fine; but what does it actually mean for mathematics and computer science ?&lt;/p&gt;
+&lt;p&gt;For mathematics it means that mathematics is not complete. Hence there
+is a very good possibility that certain problems exist in mathematics
+which can never be proven. (For
+example. the
+&lt;a href="https://en.wikipedia.org/wiki/Riemann_hypothesis"&gt;Riemann hypothesis&lt;/a&gt;
+etc)&lt;/p&gt;
+&lt;p&gt;For Computer Science this means that there are certain programs that
+are non-computable.  Yes, this basically puts a limit on the type of
+programs that you can write.&lt;/p&gt;
+&lt;h2&gt;Entscheidungsproblem (or the Decision problem)&lt;/h2&gt;
+&lt;p&gt;This problem is referred to as
+the
+&lt;a href="https://en.wikipedia.org/wiki/Entscheidungsproblem"&gt;Decision problem&lt;/a&gt;
+posed by David Hilbert. This problem asks for an algorithm that takes
+in a logical statement statement and then says either "yes" or "no" as
+to whether the statement is true or not. For the sake of simplicity
+we can assume that the algorithm is aware of all the axioms (or rules)
+that is needed to say "yes" or "no".&lt;/p&gt;
+&lt;p&gt;The solution of this problem was given by both Alan Turing and Alonzo
+Church in 1936. Alonzo Church created a method of defining functions
+called the Lambda Calculus while Alan Turing created a model of
+computation called the Turing Machine.&lt;/p&gt;
+&lt;p&gt;The final result was the no such algorithm can exist. &lt;/p&gt;
+&lt;p&gt;What does this mean for mathematics and computer science ?&lt;/p&gt;
+&lt;p&gt;For mathematics it means that not only are there certain problems that
+can not be solved (or proved) but there is no way for us to know
+whether a problem is solvable or not without actually trying to
+solve the problem.&lt;/p&gt;
+&lt;p&gt;For
+example
+&lt;a href="https://en.wikipedia.org/wiki/Fermat%27s_Last_Theorem"&gt;Fermat's Last theorem&lt;/a&gt; was
+assumed to unsolvable and it remained unsolved for about 358 years
+until Andrew Wiles solved it.&lt;/p&gt;
+&lt;p&gt;Similarly we have other challenging problems such as the Riemann
+Hypothesis etc.&lt;/p&gt;
+&lt;p&gt;For computer science it means that we can not have some program that
+tells you whether your program will work or not. Lets break this in a
+lil bit more.&lt;/p&gt;
+&lt;h3&gt;Thinking exercise for CS people.&lt;/h3&gt;
+&lt;p&gt;Sit down.&lt;/p&gt;
+&lt;p&gt;Write a program that will take any other program and tell you if that
+other program will stop or not.&lt;/p&gt;
+&lt;h3&gt;Disclaimer&lt;/h3&gt;
+&lt;p&gt;I am not expert in any of this by any stretch of the
+imagination. I'm just starting out and there is a of chance that I do
+not understand this fully. Maybe 20 years later I will look at these
+and laugh at myself. Maybe my understanding of these is completely
+wrong or misguided. &lt;/p&gt;
+&lt;p&gt;But, right now I love reading about these and that i good enough for
+me and honestly the the presented above are good enough. &lt;/p&gt;
+&lt;p&gt;I would rather be wrong about these right now than not study waiting
+for the correct time or the correct opportunity or the correct
+resource to study from. I've made that error before and I do not want
+to make it again. &lt;/p&gt;</content><category term="CS"></category></entry><entry><title>Turing Machine and Halting Problem</title><link href="https://signalshore.github.io/blog/Turing-Machine-and-Halting-Problem.html" rel="alternate"></link><published>2018-08-30T00:00:00+05:30</published><updated>2018-08-30T00:00:00+05:30</updated><author><name>Sohom</name></author><id>tag:signalshore.github.io,2018-08-30:/blog/Turing-Machine-and-Halting-Problem.html</id><summary type="html">&lt;p&gt;In a &lt;a href="https://signalshore.github.io/blog/Lambda-Calculus-Part-2.html"&gt;previous
 post&lt;/a&gt;
 I talked briefly about Alan Turing's model of computation, called the
 Turing Machine.&lt;/p&gt;
@@ -18,13 +142,13 @@ problem called the Halting problem.&lt;/p&gt;
 To fully grasp the severity of this problem we need to step back in time. &lt;/p&gt;
 &lt;p&gt;This is the 1930s that we are talking about, there were no &lt;em&gt;proper&lt;/em&gt;
 computers yet. Computers and the whole computer science field was not
-yet born. So in this context a computer something that could perform
-arithmetic operations. Humans who did this were
+yet born. So in this context a computer was something (or someone)
+that could perform arithmetic operations. Humans who did this were
 called &lt;a href="https://en.wikipedia.org/wiki/Human_computer"&gt;human computers&lt;/a&gt;
 There were
 mechanical
 &lt;a href="https://en.wikipedia.org/wiki/Mechanical_calculator"&gt;calculators&lt;/a&gt;
-that existed back then but again. they all required a human operator.&lt;/p&gt;
+that existed back then but again, they all required a human operator.&lt;/p&gt;
 &lt;p&gt;So ultimately it was the operator who was responsible for making
 decisions about what to do with the numbers. There was not automated
 reasoning that any machine could follow.&lt;/p&gt;
@@ -175,7 +299,7 @@ subroutine (hence the sub-subscript notation).&lt;/p&gt;
 &lt;li&gt;&lt;strong&gt;Input :&lt;/strong&gt; String &lt;span class="math"&gt;\(&amp;lt;M&amp;gt;\)&lt;/span&gt;, where &lt;span class="math"&gt;\(M\)&lt;/span&gt; is a Turing machine&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;Runs :&lt;/strong&gt; Simulates &lt;span class="math"&gt;\(&amp;lt;M, &amp;lt;M&amp;gt;&amp;gt;\)&lt;/span&gt; on &lt;span class="math"&gt;\(H_{TM}\)&lt;/span&gt;&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;Accepts :&lt;/strong&gt; &lt;span class="math"&gt;\(&amp;lt;M&amp;gt;\)&lt;/span&gt; if &lt;span class="math"&gt;\(H_{TM}\)&lt;/span&gt; rejects &lt;span class="math"&gt;\(&amp;lt;M, &amp;lt;M&amp;gt;&amp;gt;\)&lt;/span&gt;, i.e. if &lt;span class="math"&gt;\(M\)&lt;/span&gt; rejects &lt;span class="math"&gt;\(&amp;lt;M&amp;gt;\)&lt;/span&gt;&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Rejects :&lt;/strong&gt; &lt;span class="math"&gt;\(&amp;lt;M&amp;gt;\)&lt;/span&gt; if &lt;span class="math"&gt;\(H_{TM}\)&lt;/span&gt; accepts &lt;span class="math"&gt;\(&amp;lt;M, &amp;lt;M&amp;gt;&amp;gt;\)&lt;/span&gt;, i.e. if &lt;span class="math"&gt;\(M\)&lt;/span&gt; accepts &lt;span class="math"&gt;\(&amp;lt;M&amp;lt;\)&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Rejects :&lt;/strong&gt; &lt;span class="math"&gt;\(&amp;lt;M&amp;gt;\)&lt;/span&gt; if &lt;span class="math"&gt;\(H_{TM}\)&lt;/span&gt; accepts &lt;span class="math"&gt;\(&amp;lt;M, &amp;lt;M&amp;gt;&amp;gt;\)&lt;/span&gt;, i.e. if &lt;span class="math"&gt;\(M\)&lt;/span&gt; accepts &lt;span class="math"&gt;\(&amp;lt;M&amp;gt;\)&lt;/span&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;blockquote&gt;
 &lt;p&gt;&lt;strong&gt;Now, what happens if we run &lt;span class="math"&gt;\(D_{TM_H}\)&lt;/span&gt; on &lt;span class="math"&gt;\(&amp;lt;D_{TM_H}&amp;gt;\)&lt;/span&gt; ?&lt;/strong&gt;&lt;/p&gt;
@@ -438,7 +562,7 @@ case. Both the sets are of infinite length. In fact both of these sets
 have exactly the same number of elements.&lt;/p&gt;
 &lt;p&gt;This suggests some weird arithmetic. 
 If you add infinity with a number; you get back infinity.
-If you remove infinity from a number; you get back infinity.
+If you remove a number from a infinity; you get back infinity.
 If you divide infinity by a number; you get back infinity.
 If you multiply infinity by a number; you get back infinity.&lt;/p&gt;
 &lt;h5&gt;&lt;em&gt;Crazy isn't it ?? :-P&lt;/em&gt;&lt;/h5&gt;

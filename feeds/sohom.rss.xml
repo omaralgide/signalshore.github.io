@@ -1,5 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0"><channel><title>SignalShore - Sohom</title><link>https://signalshore.github.io/</link><description></description><lastBuildDate>Thu, 30 Aug 2018 00:00:00 +0530</lastBuildDate><item><title>Turing Machine and Halting Problem</title><link>https://signalshore.github.io/blog/Turing-Machine-and-Halting-Problem.html</link><description>&lt;p&gt;In a &lt;a href="https://signalshore.github.io/blog/Lambda-Calculus-Part-2.html"&gt;previous
+<rss version="2.0"><channel><title>SignalShore - Sohom</title><link>https://signalshore.github.io/</link><description></description><lastBuildDate>Wed, 07 Nov 2018 00:00:00 +0530</lastBuildDate><item><title>Undecidability and Incompleteness</title><link>https://signalshore.github.io/blog/Undecideablity-And-Incompleteness.html</link><description>&lt;p&gt;In the &lt;a href="https://signalshore.github.io/blog/Turing-Machine-and-Halting-Problem.html"&gt;previous post&lt;/a&gt;
+we looked at a Turing Machine and the Halting problem.  A Halting
+problems is type of decision problem for a Turing Machine.&lt;/p&gt;
+&lt;p&gt;Recall that a Turing Machine has three final states:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Accept -&amp;gt; The machine accepts the string&lt;/li&gt;
+&lt;li&gt;Reject -&amp;gt; The machine rejects the string&lt;/li&gt;
+&lt;li&gt;Loop indefinitely -&amp;gt; The …&lt;/li&gt;&lt;/ul&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Sohom</dc:creator><pubDate>Wed, 07 Nov 2018 00:00:00 +0530</pubDate><guid isPermaLink="false">tag:signalshore.github.io,2018-11-07:/blog/Undecideablity-And-Incompleteness.html</guid><category>CS</category></item><item><title>Turing Machine and Halting Problem</title><link>https://signalshore.github.io/blog/Turing-Machine-and-Halting-Problem.html</link><description>&lt;p&gt;In a &lt;a href="https://signalshore.github.io/blog/Lambda-Calculus-Part-2.html"&gt;previous
 post&lt;/a&gt;
 I talked briefly about Alan Turing's model of computation, called the
 Turing Machine.&lt;/p&gt;
