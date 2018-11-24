@@ -1,5 +1,158 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>SignalShore</title><link href="https://signalshore.github.io/" rel="alternate"></link><link href="https://signalshore.github.io/feeds/all-en.atom.xml" rel="self"></link><id>https://signalshore.github.io/</id><updated>2018-11-07T00:00:00+05:30</updated><entry><title>Undecidability and Incompleteness</title><link href="https://signalshore.github.io/blog/Undecideablity-And-Incompleteness.html" rel="alternate"></link><published>2018-11-07T00:00:00+05:30</published><updated>2018-11-07T00:00:00+05:30</updated><author><name>Sohom</name></author><id>tag:signalshore.github.io,2018-11-07:/blog/Undecideablity-And-Incompleteness.html</id><summary type="html">&lt;p&gt;In the &lt;a href="https://signalshore.github.io/blog/Turing-Machine-and-Halting-Problem.html"&gt;previous post&lt;/a&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>SignalShore</title><link href="https://signalshore.github.io/" rel="alternate"></link><link href="https://signalshore.github.io/feeds/all-en.atom.xml" rel="self"></link><id>https://signalshore.github.io/</id><updated>2018-11-24T00:00:00+05:30</updated><entry><title>Toilets!!</title><link href="https://signalshore.github.io/blog/Toilet.html" rel="alternate"></link><published>2018-11-24T00:00:00+05:30</published><updated>2018-11-24T00:00:00+05:30</updated><author><name>Sohom</name></author><id>tag:signalshore.github.io,2018-11-24:/blog/Toilet.html</id><summary type="html">&lt;p&gt;Ever so often you meet someone and somehow certain conversations with them
+start destroying your perception of reality a small chunk at a time.
+After that the only thing that you can do is to pick up the pieces of
+your shattered world-view and construct a better model. I've been …&lt;/p&gt;</summary><content type="html">&lt;p&gt;Ever so often you meet someone and somehow certain conversations with them
+start destroying your perception of reality a small chunk at a time.
+After that the only thing that you can do is to pick up the pieces of
+your shattered world-view and construct a better model. I've been
+fortunate enough to meet quite a lot of these people over my arguably
+short lifespan. This is about one such conversation with one such
+person. The details of the person have been changed.&lt;/p&gt;
+&lt;h2&gt;The Person&lt;/h2&gt;
+&lt;p&gt;We will call this person Priya. Priya was born in Mumbai. Priya has an
+ancestral house in Uttar Pradesh. Priya is nice and funny and smart
+and intelligent and kind and all the good things. She visits her
+ancestral house about once a year for 2 months. Priya knows a lot
+about farming and soil and farm animals etc.&lt;/p&gt;
+&lt;h2&gt;The Event&lt;/h2&gt;
+&lt;p&gt;Me, Priya and another friend went for a trek. I grew up in a city all
+my life so I am not used to the "village life". So during this trek I
+was asking a lot of questions about village life to Priya. For some
+reason that I do not recall now a mentioned that toilets were being
+built in the village after Narendra Modi came to power.&lt;/p&gt;
+&lt;p&gt;This took some time to register. What Priya meant was that toilets
+were being &lt;em&gt;installed&lt;/em&gt; for the first time since &lt;em&gt;ever&lt;/em&gt;. I asked Priya
+a bunch of questions. This is how the conversation went:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;Me :&lt;/strong&gt; Toh iske pehle kya hota tha ? &lt;br&gt;
+&lt;strong&gt;Priya :&lt;/strong&gt; Iske pehle sab khet me hi jate the &lt;br&gt;
+&lt;strong&gt;Me :&lt;/strong&gt; Aurat e bhi ? &lt;br&gt;
+&lt;strong&gt;Priya :&lt;/strong&gt; Ha, aurate generally subah suraj nikalne se pehle aur suraj doobne ke bad hi khet me jati thi &lt;br&gt;
+&lt;strong&gt;Me :&lt;/strong&gt; Kisi ko din me bathroom jana hua toh ? &lt;br&gt;
+&lt;strong&gt;Priya :&lt;/strong&gt; Din me generally aurate bathroom nahi jati. Koi pregnant hota hai toh wo khet me jati hai &lt;br&gt;
+&lt;strong&gt;Me :&lt;/strong&gt; Tu kabhi gayi hai ? &lt;br&gt;
+&lt;strong&gt;Priya :&lt;/strong&gt; Ha.. bohot bar. Saal me do mahine mai bhi subah subah mug leke chal parti. Ye log generally groups me jati hai &lt;br&gt;
+&lt;strong&gt;Priya :&lt;/strong&gt; Abhi toilets banne ke bad log use hi use karte hai, dheere dheere change ho raha hai &lt;br&gt;
+&lt;strong&gt;Me :&lt;/strong&gt; Experience kaisa tha ? &lt;br&gt;
+&lt;strong&gt;Priya :&lt;/strong&gt; As a kid it was okay. Zyada nahi soch ti thi. But as I started growing up I became more and more insecure. But it was for a short amount of time so I didn't think about it. &lt;br&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Translations&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;Me :&lt;/strong&gt; what used to happen previously ? &lt;br&gt;
+&lt;strong&gt;Priya :&lt;/strong&gt; Previously everyone used to the farm land &lt;br&gt;
+&lt;strong&gt;Me :&lt;/strong&gt; Even the women ? &lt;br&gt;
+&lt;strong&gt;Priya :&lt;/strong&gt; Yes, the women generally use the fields before sunrise and after sunset &lt;br&gt;
+&lt;strong&gt;Me :&lt;/strong&gt; What if someone needed to use the washroom ? &lt;br&gt;
+&lt;strong&gt;Priya :&lt;/strong&gt; Well, generally the women do not go to the bathroo during the day. If someone is pregnant then they use the farm land &lt;br&gt;
+&lt;strong&gt;Me :&lt;/strong&gt; Have you ever done this ? &lt;br&gt;
+&lt;strong&gt;Priya :&lt;/strong&gt; Yup. for about two months when we used to visit during vacations. Even i used to go to the farm land with these people carrying a bucket of water warly in the morning. They generally go in groups &lt;br&gt;
+&lt;strong&gt;Priya :&lt;/strong&gt; After the toilets are being built people use those. Things are gradually changing&lt;br&gt;
+&lt;strong&gt;Me :&lt;/strong&gt; How was the experience ? &lt;br&gt;
+&lt;strong&gt;Priya :&lt;/strong&gt; As a kid it was okay. I didn't think of it much. As I started growing up I became more and more insecure. But it was for a short period during the year so I adjusted. &lt;br&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;All this happened in like about half an hour. It took me some time to digest this.&lt;/p&gt;
+&lt;p&gt;Being a city-kid i had heard about open defecation in the news and on
+the internet but hearing the experience from a person who has
+literally wlaked in those shoes is another experience. I think what
+bothered me the most was how she spoke about it in a "matter of fact"
+way, like it was not a big deal. To me its a huge deal. Even today
+almost a week after the conversation I am still thinking about it. I
+did some more research into this. Turns out toilet technology is
+pretty cool and this problem isn't as simple as "build toilets".&lt;/p&gt;
+&lt;h1&gt;Let's talk about waste disposal&lt;/h1&gt;
+&lt;p&gt;Wikipedia page for Mumbai says that Mumbai has a population of 1.84 crores in 2011. 
+And the average weight of a humans daily poop is about 500 gms. &lt;/p&gt;
+&lt;p&gt;So Mumbai produces about 92500000 kgs of poop a
+day. (this is a rough estimate because I am not accounting for personal
+differences in poop weight and irregular bowel movements). So Mumbai
+has to deal with that much amount of waste per day. That is a lot of
+waste and that is quite a big problem to deal with.&lt;/p&gt;
+&lt;p&gt;In a city all this is abstracted away from us so we do not have to
+worry about the logistics of poop; all we need to do is flush the
+toilet and everything goes away magically. But turns out that managing
+human waste efficiently and effectively is a big and an interesting
+problem.&lt;/p&gt;
+&lt;p&gt;The process of human waste management is almost similar in cities and
+rural areas. Both the processes involve a primary treatment facility
+which is the first stage in the entire process. These are generally
+septic tanks in cities. If you live in a city in an apartment
+building chances are that there is a septic tank on-site. This septic
+tank is the place where the &lt;a href="https://en.wikipedia.org/wiki/Fecal_sludge_management"&gt;fecal sludge&lt;/a&gt; is collected. The idea is to
+separate the human from the waste. These tanks generally have a
+capacity after which they have to be pumped out.&lt;/p&gt;
+&lt;p&gt;In rural area the septic tank designs are much more simplified and
+they are generally called a pit. The pit design depends on the type of
+toilet that is used. For example if we are talking about a dry toilet
+where there is no water involved in flushing the waste, the pit design
+is considerably different from the ones where water is involved. But
+basically the poop collects there and it sits there for some
+time. Typically 2 years.&lt;/p&gt;
+&lt;p&gt;This is just the beginning. There is whole another level of complexity
+involved in the removal and management of fecal sludge. We wont get
+into that now. There is a Wikipedia page dedicated to this. Read it if
+you want to.&lt;/p&gt;
+&lt;h1&gt;What is the problem ?&lt;/h1&gt;
+&lt;p&gt;Before we go about fixing anything we need to identify the problem
+first. This is not as simple as building a toilet in the middle of
+nowhere. A proper functioning toilet needs a lot of supporting
+infrastructure to function properly and most of the time the lack of
+the supporting infrastructure and the cost associated with
+establishing not just a toilet but also the additional infra is
+huge. In a city this is a non-issue because the infrastructure already
+exists. &lt;/p&gt;
+&lt;p&gt;Thus it is evident that the sanitation solution that we use in cities
+in not ideal for rural areas. Moreover the sanitation in cities isn't
+that good either. It is highly inefficient and expensive. &lt;/p&gt;
+&lt;p&gt;We need to design better sanitation solutions that can process human
+waste with less electricity, less water and less money.&lt;/p&gt;
+&lt;h1&gt;Why does this matter ?&lt;/h1&gt;
+&lt;p&gt;Sanitation is one of the most important aspects of modern
+civilization. Poor sanitation causes diseases and diseases make a
+person/community under-productive. A person can not work or a child can
+not go to school unless they are not healthy. &lt;/p&gt;
+&lt;p&gt;Moreover, efficient sanitation is a problem that if solved once, will
+affect a lot of different areas. For example, the restrictions that
+apply on the &lt;em&gt;ideal&lt;/em&gt; sanitation solution are the same restrictions
+that apply technically every where. &lt;/p&gt;
+&lt;p&gt;Think about it. If we have a sanitation solution that is compact, uses
+less electricity, uses less water and is safe then were else can we
+use it ?&lt;/p&gt;
+&lt;p&gt;We could use it for space travel, interplanetary travel, buses, trains
+etc etc. Literally everywhere. &lt;/p&gt;
+&lt;h1&gt;Reinvent the Toilet Challenge&lt;/h1&gt;
+&lt;p&gt;The &lt;a href="https://www.gatesfoundation.org/"&gt;Bill and Melinda Gates
+Foundation&lt;/a&gt; launched the &lt;a href="https://www.gatesfoundation.org/What-We-Do/Global-Growth-and-Opportunity/Water-Sanitation-and-Hygiene/Reinvent-the-Toilet-Challenge-and-Expo"&gt;Reinvent
+the Toilet Challenge&lt;/a&gt; in 2011 to promote global innovation in better
+toilet designs. &lt;/p&gt;
+&lt;p&gt;They also came up with the
+&lt;a href="https://en.wikipedia.org/wiki/Omni_Processor"&gt;Omniprocessor&lt;/a&gt;. This is
+generally a machine that employs a group of physical, biological and
+chemical processes designed to process fecal sludge. The name was
+proposed by the Bill and Melinda Gates Foundation.&lt;/p&gt;
+&lt;p&gt;Its called the "Omni" processor because it can process a variety of
+waste stream (dry, wet etc etc) and using a variety of fuel sources.&lt;/p&gt;
+&lt;p&gt;Many interesting toiler designs have flourished as a result of this
+challenge. The Janicki Omni Processor is one of them. &lt;/p&gt;
+&lt;h2&gt;The Janicki Omni Processor : A special mention&lt;/h2&gt;
+&lt;p&gt;This processor produces drinking water, electrical energy and ash after
+processing sewage sludge. This is a really really cool piece of technology. &lt;/p&gt;
+&lt;p&gt;This was funded by the Bill and Melinda Gates Foundation. &lt;/p&gt;
+&lt;p&gt;A pilot project of Janicki Bioenergy's Omniprocessor was installed in
+Dakar, Senegal, in 2015 and can now treat the fecal sludge of
+50,000-100,000 people. &lt;/p&gt;
+&lt;p&gt;In fact in a
+&lt;a href="https://www.youtube.com/watch?time_continue=2&amp;amp;v=bVzppWSIFU0"&gt;video&lt;/a&gt;. Bill
+Gates actually drinks a glass of water produced from this same
+machine.&lt;/p&gt;
+&lt;p&gt;More information about this can be found in their
+&lt;a href="https://www.sedron.com/janicki-omni-processor/how-it-works/"&gt;website&lt;/a&gt;.&lt;/p&gt;
+&lt;h1&gt;That's about it&lt;/h1&gt;
+&lt;p&gt;I'll admit that before this encounter I had never put too much thought
+into this whole toilet thing. But anyway.. here we are and now I (and
+you) know. &lt;/p&gt;
+&lt;p&gt;I don't think that me writing about this will benefit the world too much. But I
+ like talking about things that I find interesting; so, here we are!!&lt;/p&gt;</content><category term="Meta"></category></entry><entry><title>Undecidability and Incompleteness</title><link href="https://signalshore.github.io/blog/Undecideablity-And-Incompleteness.html" rel="alternate"></link><published>2018-11-07T00:00:00+05:30</published><updated>2018-11-07T00:00:00+05:30</updated><author><name>Sohom</name></author><id>tag:signalshore.github.io,2018-11-07:/blog/Undecideablity-And-Incompleteness.html</id><summary type="html">&lt;p&gt;In the &lt;a href="https://signalshore.github.io/blog/Turing-Machine-and-Halting-Problem.html"&gt;previous post&lt;/a&gt;
 we looked at a Turing Machine and the Halting problem.  A Halting
 problems is type of decision problem for a Turing Machine.&lt;/p&gt;
 &lt;p&gt;Recall that a Turing Machine has three final states:&lt;/p&gt;

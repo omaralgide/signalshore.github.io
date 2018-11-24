@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0"><channel><title>SignalShore - Sohom</title><link>https://signalshore.github.io/</link><description></description><lastBuildDate>Wed, 07 Nov 2018 00:00:00 +0530</lastBuildDate><item><title>Undecidability and Incompleteness</title><link>https://signalshore.github.io/blog/Undecideablity-And-Incompleteness.html</link><description>&lt;p&gt;In the &lt;a href="https://signalshore.github.io/blog/Turing-Machine-and-Halting-Problem.html"&gt;previous post&lt;/a&gt;
+<rss version="2.0"><channel><title>SignalShore - Sohom</title><link>https://signalshore.github.io/</link><description></description><lastBuildDate>Sat, 24 Nov 2018 00:00:00 +0530</lastBuildDate><item><title>Toilets!!</title><link>https://signalshore.github.io/blog/Toilet.html</link><description>&lt;p&gt;Ever so often you meet someone and somehow certain conversations with them
+start destroying your perception of reality a small chunk at a time.
+After that the only thing that you can do is to pick up the pieces of
+your shattered world-view and construct a better model. I've been …&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Sohom</dc:creator><pubDate>Sat, 24 Nov 2018 00:00:00 +0530</pubDate><guid isPermaLink="false">tag:signalshore.github.io,2018-11-24:/blog/Toilet.html</guid><category>Meta</category></item><item><title>Undecidability and Incompleteness</title><link>https://signalshore.github.io/blog/Undecideablity-And-Incompleteness.html</link><description>&lt;p&gt;In the &lt;a href="https://signalshore.github.io/blog/Turing-Machine-and-Halting-Problem.html"&gt;previous post&lt;/a&gt;
 we looked at a Turing Machine and the Halting problem.  A Halting
 problems is type of decision problem for a Turing Machine.&lt;/p&gt;
 &lt;p&gt;Recall that a Turing Machine has three final states:&lt;/p&gt;
