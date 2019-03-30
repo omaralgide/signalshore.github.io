@@ -42,24 +42,26 @@
 		</span>
 		
 	</div>
-	<div itemprop="articleBody" class="article-body"><p>This is a new series that I am planning to do about every online
-course that I take. I will use this to track what I have
-learnt. Having something that I can refer to is also super awesome.</p>
+	<div itemprop="articleBody" class="article-body"><p>I am planning to use the Learning tag to create a series of posts
+about <em>every</em> online course I will take. The idea is to document
+everything in my blog. Having something that I can refer to is also
+super awesome.</p>
 <h1>Structure</h1>
 <p>The entire course is quite long. The way Dan (the instructor) has
 structured the course is that he divided the course into 3 parts. </p>
-<p>In Part A we used the programming lanugage SML (Standard Meta
+<p>In Part A we used the programming language SML (Standard Meta
 Language) since the primary focus of this part of the course is to
 learn about strongly typed, functional programming language with
 static type checking (I will talk about these later). In Part B we use
 Racket and in Part C we use Ruby.</p>
-<h4><em>NOTE: haven't taken parts B and C of the course so im not too clear on that.</em></h4>
+<h4><em>NOTE: haven't taken parts B and C of the course so I'm not too clear on that.</em></h4>
 <h1>Part A : SML</h1>
-<p>I will write get to the point and write about each major topic that I learnt. </p>
-<h2>Funcitonal Programming and Pure Functions</h2>
+<p>I will write get to the point and write about each major topic that I
+learned.</p>
+<h3>Functional Programming and Pure Functions</h3>
 <p>This section defined functional programming for me. I have programmed
 a little bit in Scheme before (due to SICP) but I never really learned
-what Funcitonal Programming really means. As a result I could not
+what Functional Programming really means. As a result I could not
 define it when someone asked me what it is. </p>
 <p>Turns out that I never really understood <em>pure functions</em>, which is
 the core concept around which functional programming revolves. Now,
@@ -67,17 +69,266 @@ pure functions are a mathematical concept. Mathematically a function
 just takes a value and returns a result. It does <em>nothing</em> else, or
 more specifically it changes nothing else. Moreover a function has to
 return the same result for the same argument <em>always</em>.</p>
-<p>Well, how does this translate into programming ?  </p>
-<p>In programming terms, a pure function has to have no <em>side effects</em>.
+<p>Well, how does this translate into programming ?</p>
+<p>In programming terms, a pure function has to have no <em>side effects</em>
 Side effects is a term computer people use to confuse non-computer
 people. It means that a function should not mutate any mutable
 variables/references in the environment. This gets tricky sometimes,
 especially if the programming language allows and encourages
-mutations.  Object-Oriented languages allow mutaiton and that can lead
+mutations.  Object-Oriented languages allow mutation and that can lead
 to some interesting problems (and security vulnerabilities) in
 software.</p>
-<h2>Function Environments (statc and dynamic environemtns)</h2>
-<h2></h2></div>
+<p>Essentially I wrote a lot of <em>functional</em> code for this course and its
+exercises and homework assignments. That was fun.</p>
+<h3>Static Typing</h3>
+<p>SML is a statically typed language, which means that the programs are
+type checked by the compiler before being run.</p>
+<p>A typical program in SML with all types explicitly mentioned looks
+like this. Its a simple function that takes two numbers and adds them.</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kr">fun</span> <span class="nf">add</span> <span class="p">(</span><span class="n">x</span><span class="p">:</span> <span class="n">int</span><span class="p">,</span> <span class="n">y</span><span class="p">:</span> <span class="n">int</span><span class="p">):</span> <span class="n">int</span> <span class="p">=</span> 
+    <span class="n">x</span> <span class="n">+</span> <span class="n">y</span><span class="p">;</span>
+</pre></div>
+</td></tr></table>
+
+<p>The type of the <code>add</code> function is <code>fn: int * int -&gt; int</code></p>
+<p>Let's write a recursive program that calculates <code>n raised to m</code>.</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kr">fun</span> <span class="nf">pow</span> <span class="p">(</span><span class="n">m</span> <span class="p">:</span> <span class="n">int</span><span class="p">,</span> <span class="n">n</span> <span class="p">:</span> <span class="n">int</span><span class="p">)</span> <span class="p">=</span>
+    <span class="kr">if</span> <span class="n">m</span><span class="p">=</span><span class="mi">0</span>
+    <span class="kr">then</span> <span class="mi">1</span>
+    <span class="kr">else</span> <span class="n">m</span> <span class="n">*</span> <span class="n">pow</span><span class="p">(</span><span class="n">m</span><span class="p">,</span> <span class="n">n-</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</td></tr></table>
+
+<p>The type of <code>pow</code> function is <code>fn: int * int -&gt; int</code></p>
+<p>I had some trouble understanding how the type system worked in SML,
+but things got quite clear after a bunch of exercises where we are
+required to write a very limited type checker ourselves. This was one
+of the best exercises in the entire course in my opinion. Turns out the
+type checker is just a massively logical piece of code and not <em>magic</em>
+and things do make sense if you know the type checking rules really
+well.</p>
+<h3>Type-Inference</h3>
+<p>In SML you are not required to explicitly mention the types of every
+expression, the type checker can infer the types itself. I found this
+very un-intuitive at first, but reading about the process made it
+quite obvious.</p>
+<p>Let us rewrite the above functions without explicitly mentioning
+types.</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6
+7</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kr">fun</span> <span class="nf">add</span> <span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span> <span class="p">=</span>
+    <span class="n">x</span> <span class="n">+</span> <span class="n">y</span><span class="p">;</span>
+
+<span class="kr">fun</span> <span class="nf">pow</span> <span class="p">(</span><span class="n">m</span><span class="p">,</span> <span class="n">n</span><span class="p">)</span> <span class="p">=</span>
+    <span class="kr">if</span> <span class="n">m</span><span class="p">=</span><span class="mi">0</span>
+    <span class="kr">then</span> <span class="mi">1</span>
+    <span class="kr">else</span> <span class="n">m</span> <span class="n">*</span> <span class="n">pow</span><span class="p">(</span><span class="n">m</span><span class="p">,</span> <span class="n">n-</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</td></tr></table>
+
+<p>In both these cases the type checker can infer the types of the
+functions and the arguments and the final type for both the functions
+is <code>fn: int * int -&gt; int</code>. The type checker can do this by <code>looking
+ahead</code> into the function and inspecting the operations being performed
+on the arguments. The intuition being that when you check if an
+argument value is equal to <code>0</code> or not, then the argument must be an
+integer. Similarly, if you are adding two arguments, they must be
+integers. To carry the idea forward, the static type checker would
+throw an error if you tried to perform some operation on incompatible
+types (like adding a string to an integer). This is also possible
+because the operators are not overloaded like how in python the <code>+</code>
+operator can do both addition for integers and concatenation for
+strings. Having non-overloaded operators means that every operator has
+a very specific type of operands that it accepts, and anything
+otherwise would not type-check.</p>
+<h3>Polymorphic Data-types</h3>
+<p>Another thing that I found beautiful was the concept of polymorphic
+types in SML. In SML the type checker can figure out if there is a
+more-general way to write your program so that it can work for <em>more
+than a single type</em> of arguments. It does this even if you specify a
+type. What this means is that your programs become more general. </p>
+<p>Let's write a function with polymorphic data-types.</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kr">fun</span> <span class="nf">add_to_list</span> <span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span> <span class="p">=</span>
+    <span class="n">x</span> <span class="n">::</span> <span class="n">y</span><span class="p">;</span>
+</pre></div>
+</td></tr></table>
+
+<p>The function <code>add_to_list</code> builds a list by taking a object and a list
+and adds the object to the front of the list. The type of this
+function is <code>fn: 'a * 'a list -&gt; 'a list</code> where <code>'a</code> is a polymorphic
+datatype as in it can take the type of any value passed to the
+function. Hence this function works for both integers and strings. </p>
+<p>Look the the results of the function calls in the comments.</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6
+7
+8</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="n">add_to_list</span><span class="p">(</span><span class="mi">2</span><span class="p">,[]);</span> 
+<span class="cm">(* [2] : int list *)</span>
+<span class="n">add_to_list</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">]);</span>
+<span class="cm">(* [2,2,3] : int list *)</span>
+<span class="n">add_to_list</span><span class="p">(</span><span class="s2">&quot;S&quot;</span><span class="p">,[]);</span>
+<span class="cm">(* [&quot;S&quot;] : string list *)</span>
+<span class="n">add_to_list</span><span class="p">(</span><span class="s2">&quot;S&quot;</span><span class="p">,[</span><span class="s2">&quot;t&quot;</span><span class="p">,</span><span class="s2">&quot;a&quot;</span><span class="p">,</span><span class="s2">&quot;r&quot;</span><span class="p">,</span><span class="s2">&quot;t&quot;</span><span class="p">]);</span>
+<span class="cm">(* [&quot;S&quot;,&quot;t&quot;,&quot;a&quot;,&quot;r&quot;,&quot;t&quot;] : string list *)</span>
+</pre></div>
+</td></tr></table>
+
+<p>It should be noted  that this functions will only work  if the type of
+the object and the type of the object  that the list is made up of are
+the same. This  is by definition since in SML  the <code>::</code> operator works
+like that. Hence the following call will not type check because we are
+trying to add <code>S</code> to the list <code>[2,3]</code>.</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="n">add_to_list</span><span class="p">(</span><span class="s2">&quot;S&quot;</span><span class="p">,[</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">]);</span>
+<span class="cm">(* Does not type check *)</span>
+</pre></div>
+</td></tr></table>
+
+<h3>Pattern Matching</h3>
+<p>Writing about pattern matching is tricky because it makes absolutely
+no sense without any context, and in order to establish context we
+would another series of blog posts which is not where I want to go
+with this. Let me try.</p>
+<p>Imagine a <code>case</code> expression. The utility of a case expression lies in
+the fact that a case expression can handle multiple branches or
+multiple cases.</p>
+<p>The case expression in SML has the form</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kr">case</span> <span class="n">expr_0</span> <span class="kr">of</span>
+    <span class="n">patt_1</span> <span class="p">=&gt;</span> <span class="n">expr_1</span>
+  <span class="n">|</span> <span class="n">patt_2</span> <span class="p">=&gt;</span> <span class="n">expr_2</span>
+  <span class="n">|</span> <span class="p">...</span>
+  <span class="n">|</span> <span class="n">patt_n</span> <span class="p">=&gt;</span> <span class="n">expr_n</span>
+</pre></div>
+</td></tr></table>
+
+<p>This is evaluated by first evaluating the <code>expr_0</code> to <code>val_0</code> and then
+pattern-matching it with <code>patt_i</code> and then based on which pattern it
+matches with, the corresponding <code>expr_i</code> is evaluated.</p>
+<p>The pattern part is super cool because it lets you use constructors and operators within the pattern to pattern match against and you can also do variable binding within the pattern itself. </p>
+<p>Let's see that in action. In the following program I will add all the elements of a list together.</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6
+7
+8</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kr">fun</span> <span class="nf">add_list</span><span class="p">(</span><span class="n">xs</span><span class="p">)</span> <span class="p">=</span>
+    <span class="kr">case</span> <span class="n">xs</span> <span class="kr">of</span>
+        <span class="p">[]</span> <span class="p">=&gt;</span> <span class="mi">0</span>
+     <span class="n">|</span> <span class="n">x::xs&#39;</span> <span class="p">=&gt;</span> <span class="n">x</span> <span class="n">+</span> <span class="n">add_list</span><span class="p">(</span><span class="n">xs&#39;</span><span class="p">);</span>
+
+<span class="n">add_list</span><span class="p">([]);</span>
+<span class="n">add_list</span><span class="p">([</span><span class="mi">2</span><span class="p">]);</span>
+<span class="n">add_list</span><span class="p">([</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">]);</span>
+</pre></div>
+</td></tr></table>
+
+<p>In this example basically we are matching against the cases where the list is either empty or not. If the list is empty we return 0 as the sum, otherwise we use pattern matching to split the list into the first element and the rest of the list (without the first element) and then recursively compute the sum.</p>
+<h3>Lexical Scope and Closures</h3>
+<p>The body of a function is evaluated in the environment where the
+function is defined, not the environment where the function is called.</p>
+<p>We will see it in this example.</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kr">val</span> <span class="nv">x</span> <span class="p">=</span> <span class="mi">2</span><span class="p">;</span>
+<span class="kr">fun</span> <span class="nf">test</span> <span class="p">(</span><span class="n">y</span><span class="p">)</span> <span class="p">=</span> <span class="n">y</span> <span class="n">+</span> <span class="n">x</span><span class="p">;</span>
+<span class="kr">val</span> <span class="nv">x</span> <span class="p">=</span> <span class="mi">4</span><span class="p">;</span>
+<span class="n">test</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+<span class="cm">(* 5 *)</span>
+</pre></div>
+</td></tr></table>
+
+<p>The output of this function is <code>5</code> and not <code>9</code> because when the
+function <code>test</code> was defined, the value of <code>x = 2</code> in the
+environment. Hence when the function was called it used that value of
+x as opposed the newer value where x is redefined to 4.</p>
+<p>A function always has an environment associated with it. This
+environment contains the bindings at the time when the function was
+defined.  This associating of a function and its environment (lexical
+environment) is called a function closure, or simply; a closure.</p>
+<p>Closures are really cool. I did not know before but as it turns out
+all the fancy things that I like about Functional Programming like
+Currying, Partial Applications etc etc are just closure idioms.</p>
+<p>There are still <em>LOTS</em> of details that I have not covered about
+pattern-matching.</p>
+<h3>Tail Recursion</h3>
+<p>After all this tail recursion is a relatively light-headed concept.</p>
+<p>A tail call is a function call that is the very last operation in the
+calling function. i.e. the calling function has nothing to do after
+the function call and the result it receives from the function call is
+the final answer. </p>
+<p>We will look at this using the factorial function.
+Mathematically we can define the factorial of a number as</p>
+<blockquote>
+<p>factorial(n) = n * factorial (n - 1) ; when n &gt; 1</p>
+</blockquote>
+<p>We can write this in SML like,</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kr">fun</span> <span class="nf">factorial</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="p">=</span>
+    <span class="kr">if</span> <span class="n">x</span><span class="p">=</span><span class="mi">0</span>
+    <span class="kr">then</span> <span class="mi">1</span>
+    <span class="kr">else</span> <span class="n">x</span> <span class="n">*</span> <span class="n">factorial</span><span class="p">(</span><span class="n">x</span> <span class="n">-</span> <span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</td></tr></table>
+
+<p>Now, this is fine and it works; BUT, its not tail recursive. 
+This is because the calling function has to multiply the result from the recursive call with <code>x</code> and then get the result.</p>
+<p>Let's write the tail recursive version of this.</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6
+7
+8</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kr">fun</span> <span class="nf">fac_tail</span><span class="p">(</span><span class="n">n</span><span class="p">)</span> <span class="p">=</span>
+    <span class="kr">let</span> <span class="kr">fun</span> <span class="nf">helper</span><span class="p">(</span><span class="n">acc</span><span class="p">,</span> <span class="n">n</span><span class="p">)</span> <span class="p">=</span>
+            <span class="kr">if</span> <span class="n">n</span><span class="p">=</span><span class="mi">0</span>
+            <span class="kr">then</span> <span class="n">acc</span>
+            <span class="kr">else</span> <span class="n">helper</span><span class="p">(</span><span class="n">n</span> <span class="n">*</span> <span class="n">acc</span><span class="p">,</span> <span class="n">n</span> <span class="n">-</span><span class="mi">1</span><span class="p">)</span>
+        <span class="kr">in</span>
+        <span class="n">helper</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">n</span><span class="p">)</span>
+    <span class="kr">end</span><span class="p">;</span>
+</pre></div>
+</td></tr></table>
+
+<p>Over here we have a helper function that takes two parameters.  The
+first parameter stores the value of <code>factorial(n - 1)</code> and the second
+one keeps track of <code>n</code>. </p>
+<p>If we look at how we are calling the helper function recursively, we see that after the recursive call returns a value, we do not need to perform any operations on the result, since it is already the result we want. This is a tail call. </p>
+<p>The benefits of tail calls is that compilers are smart enough to optimize tail calls and hence these recursive calls are not as expensive computationally.</p>
+<p>Moreover, because of lexical scoping we can use any variable binding
+in the helper function without explicitly passing it during every
+call. This makes for very readable code. Using an accumulator to store the intermediate results also helps us avoid re-computation of already computed values. This is called memoization. </p>
+<h1>Wrapping up.</h1>
+<p>Its been a long time since I finished this course. I got detracted
+from my plan to start Part B ASAP. </p>
+<p>Since I paid for this course (first online course I paid for) I got a
+certificate. My official final score is 95% which is good enough. </p>
+<p>I plan to revisit the challenge problems of week 2 and week 3 before
+starting Part B, which should take about a week more.</p></div>
 	<hr>
 	<!-- <h2>Comments</h2> -->
 	<!--  -->
